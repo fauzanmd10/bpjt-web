@@ -1,0 +1,8 @@
+
+/**
+ * IE Fix
+ */
+section.navigation-section .container {
+  background: #313131 url(../img/menu-bg.png) repeat-x;
+}
+

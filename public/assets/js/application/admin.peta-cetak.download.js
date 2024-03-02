@@ -1,0 +1,2 @@
+jQuery(document).ready(function(){jQuery('.accordion').accordion({heightStyle:"content"});});function fnShowImage(src){var w=window.open(src,'Preview','width=100%,height=100%');w.onload=w.print();w.focus();}
+function fnPrint(){jQuery(".printable").html(jQuery(".modal-body").html());window.print();}

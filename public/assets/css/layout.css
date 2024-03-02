@@ -1,0 +1,765 @@
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {
+          
+           
+           
+  	}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+        
+		/**
+            * Left Side Fix
+            */
+           .container .left-side.columns {
+           	float: left;
+           	width: 448px;
+           }
+
+           .container .right-side.columns {
+           	width:280px;
+           }
+
+
+           /**
+            * Box145
+            */
+           .box145 .posts .single-post {
+           	width: 97px;
+           	overflow: hidden;
+           }
+
+
+           /**
+            * Box145 Carousel Slider tinyscroll
+            */
+           .tinyscroll.box145 .posts .single-post {
+           	width: 145px;
+           }
+
+
+           /**
+            * box310
+            */
+           .box310 .single-column {
+           	width: 200px;
+           }
+
+
+           /**
+            * .box200
+            */
+          	.box200 .grids .single-post {
+          		width: 135px;
+          		overflow: hidden;
+          	}
+
+
+      			.box200 .grids .single-post:nth-child(3n)
+      			{
+      				margin-right: 0px;
+      			}
+
+
+
+
+           /**
+            * box53
+            */
+            .box53 .posts .single-post:nth-child(9n) {
+           		margin-right: 20px;
+           }
+           .box53 .posts .single-post:nth-child(6n) {
+           		margin-right: 0px;
+           }
+
+
+                 /**
+                  * Footer
+                  */ 
+      			.col300 {
+      			  width: 235px;
+      			  display: block;
+      			  float: left; 
+      			  margin-right: 20px;
+      			  margin-bottom: 20px;
+      			}
+
+
+      			.col300:nth-child(3n) {
+      			  margin-right: 0px;
+      			}
+
+      			.flickr-widget .photo {
+      			  float: left;
+      			  width: 48px;
+      			  height: 48px;
+      			}
+
+      			.flickr-widget .photo:nth-child(4n) {
+      				margin-right: 0px;
+      			}
+
+
+             /**
+             * Scroll slider fix
+             */
+
+            .tinyscroll .thumb .arrow {
+              left: 45%;
+            }
+
+            section.navigation-section .container {
+              width: 752px;
+            }
+
+    }
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+
+
+          /**
+           * Responsive Menu
+           */
+          
+           section.navigation-section nav {
+            float: left;
+            clear: both;
+            width: 100%;
+           }
+
+          section.navigation-section ul {
+            float: left;
+            clear: both;
+            width: 100%; 
+          }
+
+          section.navigation-section ul li {
+            float: left;
+            clear: both;
+            width: 92.8%;
+            padding: 0px;
+            display: none;
+          }
+
+          section.navigation-section ul li:first-child , section.navigation-section ul li.first {
+            display: block;
+          }
+
+
+          section.navigation-section ul li a {
+            float: left;
+            clear: both;
+            width: 100%;
+            text-align: center;
+          }
+
+
+          /**
+           * Fix page content
+           */
+          .page-content  .page-content {
+            margin-left: 0px;
+          }
+
+          .page-content .page-content .columns {
+            margin-bottom: 20px;
+          }
+
+          .page-content .page-content .columns:last-child {
+            margin-bottom: 0px;
+          }
+
+
+          section.navigation-section .container {
+              width: 418px;
+            }
+
+    }
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+         
+
+      			/**
+      			 * Header and Logo fix
+      			 */
+      			
+      			section.logo .logo-wrapper {
+      				margin-left: 15px;
+      			}
+      			
+      			 section.logo .tagline  {
+      			 	max-width: 390px;
+      			 	margin-left: 15px;
+      			 	float: left;
+      			 	clear: both;
+      			 	margin-top: 10px;
+      			 	overflow: hidden;
+      			 }
+
+      			 section.logo .tagline  img {
+      			 	max-width: 390px;
+      			 }
+            
+            /**
+            * Left Side Fix
+            */
+           .container .left-side.columns {
+           	float: left;
+           	width: 100%;
+           }
+           
+           .container.kiri-atas {
+            margin-top:20px;
+           }
+           
+           .container .left-side.columns .slider
+           {
+           	overflow: hidden;
+           }
+
+           .back-top { display:none;}
+           
+
+            /**
+            * Box145
+            */
+           .box145 .posts .single-post {
+           	width: 126px;
+           	overflow: hidden;
+           }
+
+           .box145 .posts .single-post:nth-child(3n)
+           {
+           	margin-right: 0px;
+           }
+
+           /**
+            * Box145 Carousel Slider tinyscroll
+            */
+           .tinyscroll.box145 .posts .single-post {
+           	width: 145px;
+           }
+
+           .tinyscroll.box145 .posts .single-post:nth-child(3n) {
+            margin-right: 20px;
+           }
+
+             /**
+             * Scroll slider fix
+             */
+
+            .tinyscroll .thumb .arrow {
+              left: 35%;
+            }
+
+
+           /**
+            * Sidebar
+            */
+           .container .right-side.columns {
+           	float: left;
+           	clear: both;
+           	width: 100%; margin-left: 0px;
+           }
+
+
+           .right-side .widget {
+           	float: left;
+           	clear: both;
+           	width: 100%;
+           }
+
+
+
+      			.widget .tabs .links a {
+      			  width: 98px;
+      			  text-align: center;
+
+      			}
+
+
+
+      			.widget .ads-widget-content a {
+      				margin-right: 20px;
+      			}
+
+      			.widget .ads-widget-content a:nth-child(2n) {
+      			  margin-right: 20px;
+      			}
+      			.widget .ads-widget-content a:nth-child(3n) {
+      			  margin-right: 0px;
+      			}
+
+
+
+
+
+           /**
+            * box310
+            */
+           .box310 .single-column {
+           	width: 200px;
+           }
+
+
+           /**
+            * .box200
+            */
+          	.box200 .grids .single-post {
+          		width: 126px;
+          		overflow: hidden;
+          	}
+
+          	.box200 .grids {
+          		margin-bottom: -27px;
+          	}
+
+      			.box200 .grids .single-post:nth-child(3n)
+      			{
+      				margin-right: 0px;
+      			}
+
+
+
+
+           /**
+            * box53
+            */
+            .box53 .posts .single-post:nth-child(9n) {
+           		margin-right: 20px;
+           }
+           .box53 .posts .single-post:nth-child(6n) {
+           		margin-right: 0px;
+           }
+
+
+           .left-side .pagination {
+           	margin-bottom: 40px;
+           }
+
+
+           /**
+            * contact form
+            */
+           .contact-form.omega {
+           	margin-top: 40px;
+           }
+
+
+           /**
+            * Footer
+            */
+
+           footer .widget {
+           	float: left;
+           	clear: both;
+           	width: 100%;
+           	margin-bottom: 30px;
+           }
+    			.col300 {
+    			  width: 100%;
+    			  display: block;
+    			  float: left;
+    			  clear: both; 
+    			  margin-right: 20px;
+    			  max-width: none;
+    			}
+
+
+
+    			.flickr-widget .photo {
+    			  float: left;
+    			  width: 48px;
+    			  height: 48px;
+    			}
+
+    			.flickr-widget .photo:nth-child(4n) {
+    				margin-right: 8px;
+    			}
+
+            
+    }
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {
+            
+           h3, h3 a {
+           font-size: 13px;
+           .index-berita li h5 {
+            color: #454545;
+            font-family: Arial,Helvetica,sans-serif;
+            font-size: 11px;
+            text-align: left;
+}
+}
+
+          /**
+           * Header and Logo fix
+           */
+          
+          section.logo .logo-wrapper {
+            margin-left: 15px;
+          }
+          
+           section.logo .tagline  {
+            max-width: 270px;
+            margin-left: 15px;
+            float: left;
+            clear: both;
+            margin-top: 10px;
+            overflow: hidden;
+           }
+
+           section.logo .tagline  img {
+            max-width: 270px;
+            display:none;
+           }
+
+
+           section.top-section .lang {
+            margin-top: 10px;
+            clear: both;
+           }
+
+           section.top-section a.toggle {
+            right: -60px;
+           }
+            
+            /**
+            * Left Side Fix
+            */
+           .container .left-side.columns {
+            float: left;
+            width: 100%;
+           }
+
+           .container .left-side.columns .slider
+           {
+            overflow: hidden;
+           }
+
+           section.top-section {display: none;}
+           
+           .nav > li > a {background:none !important;}
+            
+           .login-right { display:none;}
+           
+            .running-text {padding-top: 30px;}
+            
+          .terpilih {display:none;}
+          .berita-terkini-left ul li a span {width: 220px;}
+          
+          .shadow-thumb {top:-5px;}
+
+            /**
+            * Box145
+            */
+           .box145 .posts .single-post {
+            width: 140px;
+            overflow: hidden;
+           }
+
+           .box145 .posts .single-post:nth-child(3n)
+           {
+            margin-right: 20px;
+           }
+
+           .box145 .posts .single-post:nth-child(2n)
+           {
+            margin-right: 0px;
+           }
+
+           /**
+            * Box145 Carousel Slider tinyscroll
+            */
+           .tinyscroll.box145 .posts .single-post {
+            width: 145px;
+           }
+
+           .tinyscroll.box145 .posts .single-post:nth-child(2n) {
+            margin-right: 20px;
+           }
+
+           .tinyscroll.box145 .posts .single-post:last-child {
+            margin-right: 0px;
+          }
+
+
+           /**
+            * Sidebar
+            */
+           .container .right-side.columns {
+            float: left;
+            clear: both;
+            width: 100%; margin-left: 0px;
+           }
+
+
+           .right-side .widget {
+            float: left;
+            clear: both;
+            width: 100%;
+           }
+
+
+
+          .widget .tabs .links a {
+            width: 58px;
+            text-align: center;
+
+          }
+
+
+
+          .widget .ads-widget-content a {
+            margin-right: 20px;
+          }
+
+          .widget .ads-widget-content a:nth-child(2n) {
+            margin-right: 0px;
+          }
+          .widget .ads-widget-content a:nth-child(3n) {
+            margin-right: 20px;
+          }
+
+
+          /*Running Text*/
+           .mticker-news li{font-size: 8px;line-height:8px;}
+           .mticker-news span {
+            font-size: 9px;
+            padding:0 4px 0 4px;
+           }
+           .mticker-news a {
+            font-size: 10px;
+            padding: 0 5px 0 10px;
+            margin-top:-6px;
+           }
+         
+         /*end*/
+            
+
+           /**
+            * box310
+            */
+           .box310 .single-column {
+            width: 100%;
+            margin-bottom: 30px;
+           }
+
+           .box310 .single-column:last-child {
+            margin-bottom: 0px;
+           }
+
+
+
+           /**
+            * .box200
+            */
+            .box200 .grids .single-post {
+              width: 140px;
+              overflow: hidden;
+              max-width: 140px;
+              
+            }
+
+            .box200 .grids {
+              margin-bottom: -27px;
+            }
+
+
+            .box200 .grids .single-post:nth-child(3n)
+            {
+              margin-right: 20px;
+            }
+
+
+            .box200 .grids .single-post:nth-child(2n)
+            {
+              margin-right: 0px;
+            }
+
+            /* .box185
+            */
+            .box185 .grids .single-post {
+              width: 136px;
+              overflow: hidden;
+              max-width: 136px;
+              
+            }
+
+            .box185 .grids {
+              margin-bottom: -27px;
+            }
+
+
+            .box185 .grids .single-post:nth-child(3n)
+            {
+              margin-right: 20px;
+            }
+
+
+            .box185 .grids .single-post:nth-child(2n)
+            {
+              margin-right: 0px;
+            }
+            
+            /*box192*/
+           .box192 .grids .single-post {
+              width: 136px;
+              overflow: hidden;
+              max-width: 136px;
+              
+            }
+
+            .box192 .grids {
+              /*margin-bottom: -27px;*/
+            }
+
+
+            .box192 .grids .single-post:nth-child(3n)
+            {
+              margin-right: 20px;
+            }
+
+
+            .box192 .grids .single-post:nth-child(2n)
+            {
+              margin-right: 0px;
+            }
+           
+           /*end*/
+          
+            /**
+             */
+             * Scroll slider fix
+             */
+
+            .tinyscroll .thumb .arrow {
+              left: 30%;
+            }
+
+
+           /**
+            * box53
+            */
+            .box53 .posts .single-post {
+              margin-right: 8px;
+              margin-bottom: 8px;
+            }
+
+            .box53 .posts .single-post:nth-child(9n) {
+              margin-right: 8px;
+            }
+             .box53 .posts .single-post:nth-child(6n) {
+                margin-right: 8px;
+             }
+
+             .box53 .posts .single-post:nth-child(5n) {
+                margin-right: 0px;
+             }
+
+
+           .left-side .pagination {
+            margin-bottom: 40px;
+           }
+
+
+           /**
+            * contact form
+            */
+           .contact-form.omega {
+            margin-top: 40px;
+           }
+
+
+           /**
+            * Footer
+            */
+
+           footer .widget {
+            float: left;
+            clear: both;
+            width: 100%;
+            margin-bottom: 30px;
+           }
+          .col300 {
+            width: 100%;
+            display: block;
+            float: left;
+            clear: both; 
+            margin-right: 20px;
+            max-width: none;
+          }
+
+
+
+          .flickr-widget .photo {
+            float: left;
+            width: 48px;
+            height: 48px;
+          }
+
+          .flickr-widget .photo:nth-child(4n) {
+            margin-right: 8px;
+          }
+
+
+
+          section.navigation-section ul li {
+            float: left;
+            clear: both;
+            width: 90%;
+            padding: 0px;
+            display: none;
+          }
+          
+
+          .classic-blog {
+            padding-bottom: 20px;
+            border-bottom: none;
+          }
+
+          .classic-blog .posts .single-post .meta {
+            margin-left: 170px;
+          }
+
+
+          .classic-blog .posts .single-post .image {
+            width: 150px;
+            max-width: 150px;
+            overflow: hidden;
+            height: 100px;
+            float: left;
+            clear: both;
+
+          }
+
+
+
+           section.navigation-section .container {
+              width: 302px;
+            }
+            
+            
+            .back-top a {display:none;}
+           .nav > li > a.iconhome {
+    background-image: url("../images/iconhome.png");
+    background-position: 10% 50%;
+    background-repeat: no-repeat;
+    /*padding: 6px 8px 6px 24px;*/
+    
+}
+          .nav > li > a.iconhome.mobile {
+             background-image:none !important;
+             padding: 6px 8px 6px 8px;
+           }
+
+  
+

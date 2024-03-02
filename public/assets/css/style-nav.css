@@ -1,0 +1,209 @@
+
+
+a {text-decoration: none;}
+.container-menu {
+    width: 100%;
+    max-width: 950px;
+    margin: 10px auto;
+}
+.toggleMenu {
+    display:  none;
+    background: #0c2b6a;
+    padding: 7px 12px;
+    color: #ffffff !important;
+    text-transform:uppercase;
+}
+a.toggleMenu{
+    background: #F49C14;
+    padding:5px 5px 5px 5px;
+}
+.nav {
+    list-style: none;
+     *zoom: 1;
+     border-bottom: 4px solid #f8b506;
+     border-top: 0 1px 0 0 #FFFFFF inset;
+     background: #0c2b6a;
+}
+.nav:before,
+.nav:after {
+    content: " "; 
+    display: table; 
+}
+.nav:after {
+    clear: both;
+}
+.nav ul {
+    list-style: none;
+}
+.nav a {
+    padding: 6px 11px;
+    color:#fff;
+    font-family: 'Oswald',sans-serif;
+}
+.nav li {
+    position: relative;
+}
+
+.nav > li > a.active {
+    background: url("../images/nav-yellow-bg.png") repeat-x scroll 0 0 #fbc100;
+    color:#000000 !important;
+}
+
+.nav > li > a.iconhome {
+    background-image: url("../images/iconhome.png");
+    background-position: 10% 50%;
+    background-repeat: no-repeat;
+    padding: 6px 8px 6px 24px;
+    
+}
+
+.nav li.child {
+    background:hidden;
+}
+
+.nav li a.last {
+   /*background:none;*/
+  border-right: 0px;
+}
+
+.nav li:hover{
+    background-color:#F8B506;
+}
+
+.nav li a:hover {
+    color:#111111 !important; 
+}
+
+.nav li a > div {
+    background: url("../images/arrow_down.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 10px;
+    text-indent: -9999px;
+    width: 15px;
+}
+
+.nav li a.active:hover {
+    color:#ffffff !important;
+}
+
+.nav > li {
+    float: left;
+    border-left: 1px solid #021c4e;
+}
+
+.nav > li.last {
+    float: left;
+    border-right: 0px solid #5071b4;
+}
+
+.nav > li.home {
+    float: left;
+    border-left: 0px solid #FECB00;
+}
+
+.nav > li > .parent {
+}
+
+.nav > li > a {
+    display: block;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 11px;
+    color:#ffffff !important;
+    font-family: 'Oswald',sans-serif;
+    /*background: url("../images/nav-div.png") no-repeat scroll 100% 50% transparent;*/
+    padding: 6px 10px 6px 8px;
+}
+
+.triangle {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #EFA585 transparent -moz-use-text-color;
+    border-image: none;
+    border-left: 0.313em solid transparent;
+    border-style: solid solid none;
+    border-width: 0.313em 0.313em medium;
+    content: "";
+    display: inline-block;
+    height: 0;
+    position: relative;
+    right: -0.313em;
+    vertical-align: middle;
+    width: 0;
+}
+.nav li  ul {
+    left: -9999px;
+    position: absolute;
+    z-index: 9999;
+    /*padding-right: 22px;*/
+    border-bottom: 5px solid #0d2d6c;
+}
+
+
+.nav > li.hover > ul {
+    left: 0;
+}
+.nav li li.hover ul {
+    left: 100%;
+    top: 0;
+}
+.nav li li a {
+    color:#ffffff !important;
+    display: block;
+    background: #F8B506;
+    position: relative;
+    border-top: 1px dotted #e6a600;
+    height: 14px;
+    line-height: 14px;
+    text-transform: capitalize;
+    font-weight: normal;
+    font-size: 12px;
+    font-family:Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    /*width:100%;
+    display:block;*/
+    z-index: 100;
+}
+
+.nav li li a:hover {
+    color:#111111 !important;
+    background: #ffd977;
+}
+
+.nav li li li a {
+    background:#F8B506;
+    z-index:200;
+    /*left: 22px;*/
+    left: 0px;
+}
+
+.bg-menu{
+    background:#0C2B6A;
+}
+
+@media screen and (max-width: 768px) {
+    .active {
+        background: url("../images/nav-yellow-bg.png") repeat-x scroll 0 0 #fbc100;
+        color:#000000 !important;
+    }
+    .nav > li {
+        float: none;
+        background: #204691;
+    }
+    .nav > li > .parent {
+        background-position: 95% 50%;
+    }
+    .nav li li .parent {
+    }
+    .nav ul {
+        display: block;
+        width: 100%;
+    }
+   .nav > li.hover > ul , .nav li li.hover ul {
+        position: static;
+    }
+
+}
+

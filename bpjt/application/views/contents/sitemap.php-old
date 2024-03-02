@@ -1,0 +1,348 @@
+<div class="container shadow-bottom-menu">
+</div>
+
+ <!-- page content -->
+<section class="page-content main-section">
+  <!-- container -->
+  <div class="container">
+    <!-- rightside [sidebar] -->
+    <div class="right-side five columns row">
+      <!-- widgets -->
+      <div class="widgets">
+        <!-- single widget -->
+        <div class="widget">
+          <div class="widget-content">
+            <?php echo form_open('search', array('method'=>'get', 'class'=>'searchform')); ?>
+              <input type="text" class="s" required="required" name="keyword" placeholder="Cari">
+              <input type="submit" value="" class="submit search-icon" />
+            <?php echo form_close(); ?>
+          </div>
+          <!-- end widget content -->
+        </div>
+      </div>
+      <!-- end widgets -->
+
+      <div class="widgets">
+         <div class="widget-content">
+             <div class="shadow-bottom-submenu">
+                <img src="<?php echo base_url(); ?>assets/images/bottom-shadow-submenu.png">
+             </div>
+         </div> 
+      </div>
+      
+      <div class="widgets">        
+        
+
+         <!-- single widget -->
+        <div class="single-widget widget">
+          <div class="widget-content">
+            <!-- tabs -->
+            <div class="tabs">
+              <!-- links -->
+              <div class="links"><div class="popular-news">  
+               <span class="news-icon">Berita  Terpopuler</span>    
+             </div></div>
+              <!-- end links -->
+              <!-- posts tab -->
+              <div class="posts-tab">
+                <!-- popular posts tab -->
+                <div id="popular-posts-tab" class="post-tab">
+                  <?php foreach($popular_articles as $popular_article) { ?>
+                  <!-- single post -->
+                  <div class="single-post">
+                    <!-- image -->
+                    <div class="image"><img  src="<?php echo (isset($popular_article->image_name)) ? $this->media->get_image_by_style($popular_article->image_name, 'sq54') : base_url() . "assets/images/apple-touch-icon.png"; ?>" alt="<?php echo $popular_article->title; ?>" width="54" /></div>
+                    <div class="shadow-thumb-populer"></div>
+                    <!-- meta -->
+                    <div class="meta">
+                      <h6><a href="<?php echo site_url('berita/' . $popular_article->slug); ?>"><?php echo $popular_article->title; ?></a></h6>
+                      
+                    </div>
+                    <!-- end meta -->
+                    <div class="clearfix"></div>
+                  </div>
+                  <!-- end single post -->
+                  <?php } ?>
+                </div>
+                <!-- end -->
+                
+                
+              </div>
+              <!-- end posts tab -->
+            </div>
+            <!-- end tabs -->
+          </div>
+          <!-- end widget content -->
+        </div>
+        <!-- end single widget -->
+        <div class="shadow-bottom-submenu">
+            <img src="<?php echo base_url(); ?>assets/images/bottom-shadow-submenu.png">
+        </div>
+        
+        <div class="widgets">
+        <!-- single widget -->
+        <div class="single-widget widget">
+          <div class="widget-content">
+            <!-- tabs -->
+            <div class="tabs">
+              <!-- links -->
+              <div class="links"><div class="contact-us">  
+               <span class="news-icon">Kontak  Kami</span>    
+             </div></div>
+              <!-- end links -->
+              <!-- posts tab -->
+              <div class="posts-tab">
+                <!-- popular posts tab -->
+                <div id="popular-posts-tab" class="post-tab">
+                  <?php $phone = $this->content->get_content_by_paths_and_lang('telepon', '', 'id'); ?>
+                  <?php if (!empty($phone)) { ?>
+                    <?php if ($phone[0]->content != "") { ?>
+                    <!-- single post -->
+                    <div class="single-post">
+                      <!-- image -->
+                      <div class="image1"><img  src="<?php echo base_url(); ?>assets/images/phone.png" alt="" /></div>                   
+                      <!-- meta -->
+                      <div class="meta1">
+                        <h6><?php echo strip_tags($phone[0]->content); ?></h6>               
+                      </div>
+                      <!-- end meta -->
+                    </div>
+                    <?php } ?>
+                  <?php } ?>
+                  <!-- end single post -->
+
+                  <?php $fax = $this->content->get_content_by_paths_and_lang('fax', '', 'id'); ?>
+                  <?php if (!empty($fax)) { ?>
+                    <?php if ($fax[0]->content != "") { ?>
+                    <!-- single post -->
+                    <div class="single-post">
+                      <!-- image -->
+                      <div class="image1"><img  src="<?php echo base_url(); ?>assets/images/fax.png" alt="" /></div>                   
+                      <!-- meta -->
+                      <div class="meta1">
+                        <h6><?php echo strip_tags($fax[0]->content); ?></h6>
+                      </div>
+                      <!-- end meta -->
+                    </div>
+                    <!-- end single post -->
+                    <?php } ?>
+                  <?php } ?>
+
+                  <?php $email = $this->content->get_content_by_paths_and_lang('email', '', 'id'); ?>
+                  <?php if (!empty($email)) { ?>
+                    <?php if ($email[0]->content != "") { ?>
+                    <!-- single post -->
+                    <div class="single-post">
+                      <!-- image -->
+                      <div class="image1"><img  src="<?php echo base_url(); ?>assets/images/email-kontak.png" alt="" /></div>                  
+                      <!-- meta -->
+                      <div class="meta1">
+                        <h6><?php echo strip_tags($email[0]->content); ?></h6>
+                      </div>
+                      <!-- end meta -->
+                    </div>
+                    <?php } ?>
+                  <?php } ?>
+                  <!-- end single post -->
+                  
+                  <?php $alamat = $this->content->get_content_by_paths_and_lang('alamat', '', 'id'); ?>
+                  <?php if (!empty($alamat)) { ?>
+                    <?php if ($alamat[0]->content != "") { ?>
+                    <!-- single post -->
+                    <div class="single-post">
+                      <!-- image -->
+                      <div class="image1"><img  src="<?php echo base_url(); ?>assets/images/address.png" alt="" /></div>                  
+                      <!-- meta -->
+                      <div class="meta1">
+                        <h6><?php echo strip_tags($alamat[0]->content); ?></h6>
+                      </div>
+                      <!-- end meta -->
+                    </div>
+                    <!-- end single post -->
+                    <?php } ?>
+                  <?php } ?>
+                  
+                </div>
+                <!-- end -->
+              </div>
+              <!-- end posts tab -->
+            </div>
+            <!-- end tabs -->
+          </div>
+          <!-- end widget content -->
+        </div>
+        <!-- end single widget -->
+        <div class="shadow-bottom-submenu">
+            <img  src="<?php echo base_url(); ?>assets/images/bottom-shadow-submenu.png">
+        </div>
+      </div>
+      
+      </div>
+      
+    </div>
+    <!-- end right side -->
+    <!-- left side -->
+    <div class="left-side menukiri eleven columns menukiri row">
+    	<div class="kegiatan eleven columns alpha"> 
+	        <span>Peta Situs</span>
+	    </div>
+      <!-- single post -->
+      <div class="page-single">
+        
+        
+        <!-- post content -->
+        <div class="post-content section">
+          <?php $lang = $this->session->userdata('lang'); ?>
+          <?php
+            $ext = "";
+            if ($lang == 'en') {
+              $ext = "en/";
+            }
+          ?>
+                    <div id="site-map" class="bottom">
+                        <ul class="level_0"><br />
+                            <!-- <li class="first"><strong>BPJT</strong></li>
+                            <ul class="level_1">
+                                <li><a href="">BPJT</a>
+                                    <ul class="level_1">
+                                        <li><a href="">Sekilas BPJT</a></li>
+                                        <li><a href="">Visi dan Misi</a></li>
+                                        <li><a href="">Struktur Organisasi</a> </li>
+                                        <li><a href="">Tugas BPJT</a> </li>
+                                    </ul>
+                                 </li>
+                                           
+                            </ul>
+                           <br/> -->
+                            <!-- <li class="first"><strong>Jalan Tol</strong></li>
+                              <ul class="level_1">
+                                <li><a href="">Jalan Tol</a>
+                                    <ul class="level_1">
+                                        <li><a href="">Sejarah</a></li>
+                                        <li><a href="">Tujuan dan Manfaat</a></li>
+                                        <li><a href="">Kebijakan Percepatan</a> </li>
+                                        <li><a href="">Pembangunan</a> </li> 
+                                        <li><a href="">Nama Ruas Tol</a> </li>
+                                        <li><a href="">Trafik Pengguna</a> </li>
+                                    </ul>
+                                </li>        
+                              </ul>
+                            <br/> -->
+                            <?php
+                              $collections = $this->menu->get_parsedtree_menus();
+                              $this->menu->print_sitemap_menu($collections);
+                            ?>
+                            <li class="first"><strong>SPM</strong></li>
+                            <ul class="level_1">
+                                <li><a href="#">SPM</a>
+                                    <ul class="level_1">
+                                        <li><a href="<?php echo site_url('spm'); ?>">SPM</a></li>
+                                        <li><a href="<?php echo site_url('konten/'.$ext.'spm/definisi-spm'); ?>"><?php echo lang('definisi-spm'); ?></a></li>
+                                        <li><a href="<?php echo site_url('spm/rekapitulasi'); ?>"><?php echo lang('rekapitulasi-spm'); ?></a> </li> 
+                                    </ul>
+                                </li>     
+                            </ul>
+                            <br/>
+                            <!-- <li class="first"><strong>BUJT</strong></li>
+                            <ul class="level_1">
+                                <li><a href="">BUJT</a></li>
+                            </ul>
+                            
+                            <br/> -->
+                            <li class="first"><strong><?php echo lang('info-tarif-tol'); ?></strong></li>
+                            <ul class="level_1">
+                                <li><a href="#"><?php echo lang('info-tarif-tol'); ?></a>
+                                  <ul class="level_1">
+                                    <li><a href="<?php echo site_url('info-tarif-tol'); ?>"><?php echo lang('info-tarif-tol'); ?></a></a></li>
+                                    <li><a href="<?php echo site_url('konten/'.$ext.'golongan-kendaraan'); ?>"><?php echo lang('golongan-kendaraan'); ?></a></a></li>
+                                  </ul>
+                                </li>
+                            </ul>
+                            <br/>
+                            <!-- <li class="first"><strong>Investasi</strong></li>
+                            <ul class="level_1">
+                                <li><a href="">Investasi</a>
+                                    <ul class="level_1">
+                                        <li><a href="">Prinsip Penyelenggaraan</a></li>
+                                        <li><a href="">Skema Investasi</a></li>
+                                        <li><a href="">Tahapan Makro Pengusahaan Jalan Tol</a> </li>
+                                        <li><a href="">Prosedur Investasi</a> </li> 
+                                    </ul>
+                                </li>     
+                            </ul>
+                            <br/> -->
+                            <!-- <li class="first"><strong>Status Jalan Tol</strong></li>
+                            <ul class="level_1">
+                                <li><a href="">Status Jalan Tol</a>
+                                    <ul class="level_1">
+                                        <li><a href="">Rencana</a></li>
+                                        <li><a href="">Pelelangan Investasi</a></li>
+                                        <li><a href="">Konstruksi</a> </li>
+                                        <li><a href="">Operasi</a> </li> 
+                                    </ul>
+                                </li>     
+                            </ul>
+                            <br/> -->
+                            <li class="first"><strong><?php echo lang('gis-bpjt'); ?></strong></li>
+                            <ul class="level_1">
+                                <li><a href="http://bpjt-gis.onesystemsolution.co.id" target="_blank"><?php echo lang('gis-bpjt'); ?></a> </li>     
+                            </ul>
+                            <br/>
+                            <li class="first"><strong><?php echo lang('peraturan'); ?></strong></li>
+                            <ul class="level_1">
+                                <li><a href="#"><?php echo lang('peraturan'); ?></a>
+                                    <ul class="level_1">
+                                        <li><a href="<?php echo site_url('peraturan/undang-undang'); ?>"><?php echo lang('undang-undang'); ?></a></li>
+                                        <li><a href="<?php echo site_url('peraturan/peraturan-pemerintah'); ?>"><?php echo lang('peraturan-pemerintah'); ?></a></li>
+                                        <li><a href="<?php echo site_url('peraturan/peraturan-presiden'); ?>"><?php echo lang('peraturan-presiden'); ?></a> </li>
+                                        <li><a href="<?php echo site_url('peraturan/peraturan-menteri'); ?>"><?php echo lang('peraturan-menteri'); ?></a> </li> 
+                                        <li><a href="<?php echo site_url('peraturan/keputusan-menteri'); ?>"><?php echo lang('keputusan-menteri'); ?></a> </li> 
+                                        <li><a href="<?php echo site_url('peraturan/keputusan-kepala-bpjt'); ?>"><?php echo lang('keputusan-kepala-bpjt'); ?></a> </li> 
+                                        <li><a href="<?php echo site_url('peraturan/keputusan-gubernur'); ?>"><?php echo lang('keputusan-gubernur'); ?></a> </li> 
+                                        <li><a href="<?php echo site_url('peraturan/lainnya'); ?>"><?php echo lang('lainnya'); ?></a> </li> 
+                                    </ul>
+                                </li>     
+                            </ul>
+                             <br/>
+                            <li class="first"><strong><?php echo lang('galeri'); ?></strong></li>
+                            <ul class="level_1">
+                                <li><a href=""><?php echo lang('galeri-foto'); ?></a>
+                                  <?php $photo_albums = $this->album->get_published_albums($this->session->userdata('lang'), 'photo', false); ?>
+                                  <ul class="level_1">
+                                    <?php foreach($photo_albums as $photo_album) { ?>
+                                    <li><a href="<?php echo site_url('galeri-foto/album-foto/' . $photo_album->slug); ?>" title="<?php echo $photo_album->name; ?>"><?php echo $photo_album->name; ?></a></li>
+                                    <?php }?>
+                                  </ul>
+                                </li>
+                                <li><a href=""><?php echo lang('galeri-video'); ?></a> 
+                                  <?php $video_albums = $this->album->get_published_albums($this->session->userdata('lang'), 'video', false); ?>
+                                  <ul class="level_1">
+                                    <?php foreach($video_albums as $video_album) { ?>
+                                    <li><a href="<?php echo site_url('galeri-video/album-video/' . $video_album->slug); ?>" title="<?php echo $video_album->name; ?>"><?php echo $video_album->name; ?></a></li>
+                                    <?php }?>
+                                  </ul>
+                                </li>
+                            </ul>
+                             <br/>
+                            <li class="first"><strong><?php echo lang('index-berita'); ?></strong></li>
+                            <ul class="level_1">
+                                <li><a href="<?php echo site_url('berita'); ?>"><?php echo lang('index-berita'); ?></a> </li>     
+                            </ul>
+                         </ul>
+                    </div>
+                </div>
+          
+          
+        </div>
+        <!-- end post content -->
+        
+      </div>
+      <!-- end single post content -->
+    
+    </div>
+    <!-- end leftside -->
+    
+  </div>
+  <!-- end container -->
+</section>
+<!-- end page content -->

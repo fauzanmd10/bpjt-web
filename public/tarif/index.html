@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="description" content="Badan Pengatur Jalan Tol Direktorat Jenderal Bina Marga Kementerian Pekerjaan Umum dan Perumahan Rakyat">
+        <meta name="keywords" content="BPJT tarif tol, gis, tarif tol, tariff, tarif">
+		<meta name="author" content="">
+        <meta charset="utf-8">
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BPJT Tarif Tol</title>
+		<link rel="icon" href="https://www.pu.go.id/assets/images/content/LOGO_PU.jpg">
+       
+        <style type="text/css">
+
+			iframe {
+			  overflow: hidden;
+			  height:calc(100vh - 20px);
+			  width:calc(100vw - 30px);
+			  box-sizing: border-box;
+			}
+        </style>
+    </head>
+    <body style="background-color: #364773;">
+ 
+	  <iframe class="responsive-iframe" src="https://tarif.wst.co.id/" frameborder="0" scrolling="no" allowfullscreen style="overflow:hidden"></iframe>
+
+	
+        <!-- REQUIRED JS SCRIPTS -->
+
+        <!-- jQuery 3 -->
+        <!--script src="/bpjt_api/assets/adminlte/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap 3.3.7 --
+        <script src="/bpjt_api/assets/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- AdminLTE App --
+        <script src="/bpjt_api/assets/adminlte/dist/js/adminlte.min.js"></script>
+
+        <!-- Optionally, you can add Slimscroll and FastClick plugins.
+             Both of these plugins are recommended to enhance the
+             user experience. -->
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    $(function() {
+        $(this).bind("contextmenu", function(e) {
+            e.preventDefault();
+        });
+    });
+	
+	document.onkeydown = function(e) {
+			if (e.ctrlKey && 
+				(e.keyCode === 67 || 
+				 e.keyCode === 86 || 
+				 e.keyCode === 85 || 
+				 e.keyCode === 117)) {
+				return false;
+			} else {
+				return true;
+			}
+	};
+	$(document).keypress("u",function(e) {
+	  if(e.ctrlKey)
+	  {
+	return false;
+	}
+	else
+	{
+	return true;
+	}
+	});
+</script>
+</html>

@@ -1,0 +1,5 @@
+ RewriteEngine On
+
+
+RewriteCond %{HTTPS} ^on$
+RewriteRule ^chat http://bpjt.pu.go.id/tarif/$1 [NC,L,R]
