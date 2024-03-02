@@ -1,0 +1,38 @@
+/* Page */
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+/* Remove gutter on col- */
+.no-gutter {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+/* Create gap on website */
+.navbar,
+.navbar-hut-ri,
+.box {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    @media(min-width:768px){
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+/* Fullwidth */
+.fullwidth {
+    width: 100%;
+}

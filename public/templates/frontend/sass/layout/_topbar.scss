@@ -1,0 +1,45 @@
+/* Top Bar */
+#topbar.container-fluid {
+    background-color: $brand-primary;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #fff;
+
+    .row {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @media (min-width: 768px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+    }
+
+    p,
+    p img {
+        display: inline;
+    }
+
+    p.pu-net {
+        margin-left: 10px;
+    }
+
+    .puprtv {
+        width: 70px;
+        margin-top: -5px;
+        margin-bottom: -5px;
+        margin-right: 20px;
+        filter: gray; /* IE6-9 */
+        -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+        filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+        opacity: 0.8;
+    }
+
+    p.date {
+        font-size: 12px;
+
+        @media (min-width: 768px) {
+            font-size: 14px;
+        }
+    }
+}

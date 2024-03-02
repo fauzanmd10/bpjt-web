@@ -1,0 +1,659 @@
+/* Pusat Berita */
+
+/* Slider */
+#slider-pusat-berita.container-fluid {
+    border-top: 4px solid #eeae16;
+
+    #bendera {
+        background-image: url("../img/slider/bendera.png");
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    #bendera h2 {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+        font-size: 60px;
+    }
+
+    #slide-img img {
+        height: 176px;
+        width: 100%;
+    }
+}
+
+/* Breadcrumb */
+#breadcrumb {
+    background-color: #ccc;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+
+    @media(min-width:768px){
+        background-color: #fff;
+        margin-left: 65px;
+        margin-right: 65px;
+    }
+}
+
+/* Breadcrumb */
+#breadcrumb p {
+    color: #000;
+    word-spacing: 10px;
+}
+
+#breadcrumb p .active {
+    color: #565656;
+    word-spacing: 0;
+
+    @media(min-width:768px){
+        color: #ccc;
+    }
+}
+
+#index-artikel.row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media (min-width:768px) {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+#index-artikel .collapsible-box {
+    margin-bottom: -17px;
+
+    @media(min-width:768px){
+        margin-bottom: 0;
+    }
+}
+
+/* Accordion Profil */
+#index-artikel #accordionIndex .panel,
+#index-artikel #accordionIndex .panel .panel-heading {
+    border: 0;
+    border-radius: 0;
+}
+
+#index-artikel #accordionIndex .panel .panel-heading .panel-title {
+    padding: 10px;
+}
+
+#index-artikel #accordionIndex .panel .panel-heading .panel-title .main-title {
+    color: #fff;
+    font-weight: 700;
+
+    @media(min-width: 768px) {
+        margin-left: -20px;
+    }
+
+    @media(min-width: 992px) {
+        margin-left: 0px;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+#index-artikel #accordionIndex .panel .panel-heading {
+    background-color: #45678d;
+    border-left: 10px solid #27af89;
+}
+
+#index-artikel #accordionIndex .panel .panel-heading i {
+    color: #fff;
+}
+
+#index-artikel #accordionIndex .panel .panel-body {
+    padding: 0;
+    padding-top: 20px;
+}
+
+#index-artikel #accordionIndex .panel .panel-body ul li {
+    margin: 20px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+}
+
+#index-artikel #accordionIndex .panel .panel-body ul li a {
+    color: #000;
+}
+
+#index-artikel #accordionIndex .subpanel .panel-body  {
+    overflow-y: hidden !important;
+}
+
+#index-artikel #accordionIndex .subpanel .panel .panel-heading {
+    background-color: #fff;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#index-artikel #accordionIndex .subpanel .panel .panel-heading i {
+    color: #000;
+}
+
+#index-artikel #accordionIndex .subpanel .panel .panel-body {
+    padding-top: 10px;
+    margin-left: 40px;
+}
+
+#index-artikel #accordionIndex .subpanel .panel .panel-heading .panel-title {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0;
+}
+
+/* Accordion Berita Terkini */
+#index-artikel #accordionBerita .panel,
+#index-artikel #accordionBerita .panel .panel-heading {
+    border: 0;
+    border-radius: 0;
+}
+
+#index-artikel #accordionBerita .panel .panel-body  {
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#index-artikel #accordionBerita .panel .panel-heading .panel-title {
+    padding: 10px;
+}
+
+#index-artikel #accordionBerita .panel .panel-heading .panel-title .pull-left {
+    color: #fff;
+    font-weight: 700;
+
+    @media(min-width: 768px) {
+        margin-left: -20px;
+    }
+
+    @media(min-width: 992px) {
+        margin-left: 0px;
+    }
+}
+
+#index-artikel #accordionBerita .panel .panel-heading {
+    background-color: #45678d;
+    border-left: 10px solid #27af89;
+}
+
+#index-artikel #accordionBerita .panel .panel-heading i {
+    color: #fff;
+}
+
+#index-artikel #accordionBerita .panel .panel-body {
+    padding: 0;
+    padding-top: 20px;
+}
+
+#index-artikel #accordionBerita .subpanel .panel-body  {
+    overflow-y: hidden !important;
+}
+
+#index-artikel #accordionBerita .subpanel .panel .panel-heading {
+    background-color: #fff;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#index-artikel #accordionBerita .subpanel .panel .panel-heading i {
+    color: #000;
+}
+
+#index-artikel #accordionBerita .subpanel .panel .panel-body {
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+#index-artikel #accordionBerita .subpanel .panel .panel-heading .panel-title {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0;
+}
+
+/* Accordion Videografis */
+#index-artikel #accordionVideografis .panel,
+#index-artikel #accordionVideografis .panel .panel-heading {
+    border: 0;
+    border-radius: 0;
+}
+
+#index-artikel #accordionVideografis .panel .panel-body  {
+    max-height: 360px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#index-artikel #accordionVideografis .panel .panel-heading .panel-title {
+    padding: 10px;
+}
+
+#index-artikel #accordionVideografis .panel .panel-heading .panel-title .pull-left {
+    color: #fff;
+    font-weight: 700;
+
+    @media(min-width: 768px) {
+        margin-left: -20px;
+    }
+
+    @media(min-width: 992px) {
+        margin-left: 0px;
+    }
+}
+
+#index-artikel #accordionVideografis .panel .panel-heading {
+    background-color: #45678d;
+    border-left: 10px solid #27af89;
+}
+
+#index-artikel #accordionVideografis .panel .panel-heading i {
+    color: #fff;
+}
+
+#index-artikel #accordionVideografisa .panel .panel-body {
+    padding: 0;
+    padding-top: 20px;
+}
+
+#index-artikel #accordionVideografis .subpanel .panel-body  {
+    overflow-y: hidden !important;
+}
+
+#index-artikel #accordionVideografis .subpanel .panel .panel-heading {
+    background-color: #fff;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#index-artikel #accordionVideografis .subpanel .panel .panel-heading i {
+    color: #000;
+}
+
+#index-artikel #accordionVideografis .subpanel .panel .panel-body {
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+#index-artikel #accordionVideografis .subpanel .panel .panel-heading .panel-title {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0;
+}
+
+/* Artikel */
+#index-artikel #artikel {
+
+}
+/* Video Carousel */
+#index-artikel #artikel #carousel-video {
+    margin-bottom: 20px;
+    background-color: rgba(13,36,81,0.9);
+    margin-top: -50px;
+}
+
+#index-artikel #artikel #carousel-video .carousel-inner img {
+    display: inline;
+    border: 2px solid;
+    border-color: transparent;
+}
+
+#index-artikel #artikel #carousel-video .carousel-control {
+    opacity: 1;
+    margin-top: 20px;
+}
+
+#index-artikel #artikel #carousel-video .carousel-control.left,
+#index-artikel #artikel #carousel-video .carousel-control.right {
+    background-image:none !important;
+    filter:none !important;
+    text-shadow: none;
+    color: #d1d2c2;
+    font-weight: 400;
+    font-size: 14px;
+    top: -80px;
+
+    @media(min-width:360px) {
+        top: -100px;
+    }
+}
+
+#index-artikel #artikel #carousel-video .carousel-control i {
+    background-color: #fff;
+    padding: 10px;
+    @include border-radius(50%);
+}
+
+#index-artikel #artikel #carousel-video .carousel-inner .item {
+    text-align: center;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    @media(min-widh:400px) {
+        margin-top: 0px;
+        margin-top: 0px;
+    }
+
+    @media(min-width:768px) {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    @media(min-width:992px){
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+#index-artikel #artikel #carousel-video .carousel-inner .item img {
+    width: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    @media(min-width:360px){
+        width: 49px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    @media(min-width:375px){
+        width: 51px;
+    }
+
+    @media(min-width:400px){
+        width: 60px;
+    }
+
+    @media(min-width:768px) {
+        width: 51px;
+    }
+
+    @media(min-width:992px){
+        width: 64px;
+    }
+
+}
+
+#index-artikel #artikel #carousel-video .carousel-inner .item img.active {
+    border: 2px solid #f6ed24;
+}
+
+
+/* Video */
+#index-artikel #accordionVideografis .video-box {
+    border-bottom: 1px solid #ccc;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#index-artikel #accordionVideografis .video {
+    display: inline;
+    float: left;
+}
+
+#index-artikel #accordionVideografis .title,
+#index-artikel #accordionVideografis .date,
+#index-artikel #accordionVideografis .tag {
+    margin-left: 120px;
+}
+
+#index-artikel #accordionVideografis .date,
+#index-artikel #accordionVideografis .tag a {
+    color: #ccc;
+    font-size: 12px;
+}
+
+#index-artikel #accordionVideografis .title a {
+    color: #000;
+    font-size: 16px;
+}
+
+#index-artikel #accordionVideografis .date {
+    margin-top: -10px;
+}
+
+#index-artikel #accordionVideografis .tag {
+    margin-top: 20px;
+}
+
+#index-artikel #accordionVideografis .tag i {
+    color: #808080;
+}
+
+/* Artikel */
+#index-artikel #artikel {
+    background-color: #fff;
+    padding: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+
+    @media (min-width:992px) {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+#index-artikel #artikel .title {
+    color: $brand-primary;
+    font-weight: 700;
+}
+
+#index-artikel #artikel .divider {
+    border-color: #ffe688;
+    width: 100px;
+    border-width: 2px;
+    margin: 0;
+}
+
+#index-artikel #artikel .date  {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    color: #ccc;
+    font-size: 12px;
+}
+
+#index-artikel #artikel .date .pull-right a img {
+    display: inline;
+}
+
+#index-artikel #artikel .body .image img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#index-artikel #artikel .body .indent {
+    margin-left: 50px;
+}
+
+#index-artikel #artikel .body .sumber {
+    margin-top: 50px;
+}
+
+/* Artikel Footer */
+#index-artikel #artikel #artikel-footer.body {
+    margin-top: 10px;
+}
+
+/* Video Gallery */
+#index-artikel #artikel #artikel-footer #video-gallery {
+    margin-bottom: 20px;
+
+    @media(min-width:768px){
+        margin-bottom: 0px;
+    }
+}
+
+#index-artikel #artikel #artikel-footer #video-gallery .no-padding-left {
+    margin-bottom: 20px;
+
+    @media(min-width:768px){
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+}
+
+#index-artikel #artikel #artikel-footer #video-gallery .no-padding-right {
+    @media(min-width:768px){
+        padding-right: 0;
+    }
+}
+
+
+
+/* Download */
+#index-artikel #artikel #artikel-footer #download {
+    margin-top: 50px;
+}
+
+#index-artikel #artikel #artikel-footer #download .btn-download {
+    background-color: $brand-primary;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 0;
+}
+
+#index-artikel #artikel #artikel-footer .filesize {
+    color: #ccc;
+}
+
+/* Tag */
+#index-artikel #artikel #artikel-footer .tag,
+#index-artikel #artikel #artikel-footer .tag {
+    margin-top: 20px;
+}
+
+#index-artikel #artikel #artikel-footer .tag p {
+    color: #595959;
+    font-weight: 600;
+}
+
+#index-artikel #artikel #artikel-footer .tag .label {
+    font-weight: 400;
+    padding: 8px;
+    margin: 15px;
+    background-color: #8e8e8e;
+    line-height: 40px;
+
+    @media(min-width:992px) {
+        line-height: 35px;
+    }
+
+    @media(min-width:1200px){
+        line-height: 35px;
+    }
+
+    @media(min-width:1400px){
+        line-height: 30px;
+    }
+}
+
+#index-artikel #artikel #artikel-footer .tag .divider {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#index-artikel #artikel #artikel-footer .tag p > a:hover {
+    text-decoration: none;
+}
+
+/* Share */
+#index-artikel #artikel #artikel-footer .share {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#index-artikel #artikel #artikel-footer .share p {
+    color: #595959;
+    font-weight: 600;
+}
+
+#index-artikel #artikel #artikel-footer .end {
+    border-color: #ddd;
+}
+
+#index-artikel #artikel #artikel-footer .share a img {
+    display: inline;
+    width: 32px;
+    margin-left: 10px;
+}
+
+/* Berita Terkait */
+#index-artikel #artikel #artikel-footer .berita-terkait {
+    margin-top: 40px;
+}
+
+#index-artikel #artikel #artikel-footer .berita-terkait .title {
+    color: #595959;
+    font-size: 16px;
+}
+
+#index-artikel #artikel #artikel-footer .berita-terkait .divider {
+    border-color: #ccc;
+    width: 50px;
+    border-width: 2px;
+    margin: 0;
+}
+
+#index-artikel #artikel #artikel-footer .berita-terkait .artikel {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#index-artikel #artikel #artikel-footer .berita-terkait .artikel img {
+    float: left;
+    margin-right: 20px;
+    width: 100px;
+
+    @media(min-width:400px) {
+        width: 128px;
+    }
+
+    @media(min-width:768px) {
+        width: auto;
+    }
+}
+
+#index-artikel #artikel #artikel-footer .berita-terkait .artikel .berita-title {
+    font-weight: 700;
+    font-size: 10px;
+
+    @media(min-width:360px) {
+        font-size: 12px;
+    }
+
+    @media(min-width:400px) {
+        font-size: 16px;
+    }
+}
+
+#index-artikel #artikel #artikel-footer .berita-terkait .artikel .berita-date {
+    color: #ccc;
+    margin-top: -8px;
+    font-size: 10px;
+
+    @media(min-width: 375px) {
+        font-size: 12px;
+    }
+}
+
+#index-artikel #artikel #artikel-footer .berita-terkait .artikel .berita-title,
+#index-artikel #artikel #artikel-footer .berita-terkait .artikel .berita-date,
+#index-artikel #artikel #artikel-footer .berita-terkait .artikel .berita-content {
+    margin-left: auto;
+
+    @media(min-width:768px) {
+        margin-left: 200px;
+    }
+}
+
+#index-artikel #artikel #artikel-footer .berita-terkait .artikel .berita-content {
+    color: #696969;
+}

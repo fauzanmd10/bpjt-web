@@ -1,0 +1,213 @@
+/* Pusat */
+
+/* Berita Slider */
+#berita-slider.row {
+    background-color: white;
+
+    @media(min-width:768px){
+        margin-bottom: 20px;
+        margin-top: 20px;
+        margin-left: 65px;
+        margin-right: 65px;
+    }
+
+    .slider {
+        .container {
+            position: relative;
+            width: auto;
+        }
+
+        .container .slide {
+            width: 100%;
+            display: inline-block;
+            display: none;
+            padding: 10px;
+            padding-bottom: 0;
+        }
+
+        .container img {
+            float: left;
+        }
+
+        .container img,
+        .container p:first-child {
+            display: inline;
+        }
+
+        .container .title {
+            color: $brand-primary;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .container .date {
+            color: #ccc;
+            font-size: 12px;
+        }
+
+        .container .tag {
+            font-weight: 700;
+        }
+
+        .container .title,
+        .container .date,
+        .container .tag {
+            line-height: 15px;
+            margin-left: 100px;
+        }
+
+        button {
+            position: absolute;
+            z-index: 999;
+            margin-top: 130px;
+            color: #7b7b7b;
+
+            @media(min-width:768px) {
+                margin-top: 30px;
+            }
+        }
+
+        .next {
+            right: 1%;
+        }
+
+        .prev {
+            left: 1%;
+        }
+    }
+}
+
+#lpse {
+
+    @media(min-width:768px){
+        margin-top: 20px;
+    }
+
+    @media(min-width:992px){
+        margin-top: 0;
+    }
+
+    .bg {
+        background-color: #fff;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .button-box a.btn {
+        margin-right: -4px;
+        border-radius: 0;
+        background-color: #e6e6e6;
+        color: #575757;
+        text-align: center;
+        font-weight: 700;
+        padding: 10px 15px;
+    }
+
+    .title {
+        text-align: left;
+        padding: 10px;
+    }
+
+    #lpse-table {
+        thead {
+            background-color: #27af89;
+            color: #fff;
+        }
+
+        thead th {
+            text-align: center;
+            border: 0;
+        }
+
+        tbody tr td {
+            border-color:  #27af89;
+            border-bottom-color: #fff;
+        }
+
+        .download {
+            color: #000;
+        }
+    }
+
+    #button-box2  {
+        background-color: #e6e6e6;
+        margin-top: -20px;
+        padding: 15px;
+        padding-bottom: 30px;
+        height: 100px;
+        text-align: center;
+
+        @media(min-width:768px){
+            height: 80px;
+            text-align: left;
+        }
+
+        @media(min-width:992px) {
+            height: 70px;
+        }
+
+        @media(min-width:1200px){
+            height: 50px;
+        }
+    }
+
+    #button-box2 .link a {
+        margin: 1%;
+
+        @media(min-width:1200px){
+            margin: 1.5%;
+        }
+
+        @media(min-width:1300px){
+            margin: 2%;
+        }
+    }
+
+    #button-box2 a {
+        text-align: center;
+    }
+
+    #button-box2  a {
+        color: #000;
+        font-weight: 700;
+    }
+
+}
+
+/* Artikel Mobile */
+#artikel-mobile {
+
+    .no-gutter {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .artikel-mobile-divider {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .title a {
+        font-size: 10px;
+
+        @media (min-width: 360px) {
+            font-size: 12px;
+        }
+
+        @media (min-width: 400px) {
+            font-size: 14px;
+        }
+    }
+
+    .date {
+        color: #222;
+        font-size: 10px;
+
+        @media (min-width: 360px) {
+            font-size: 12px;
+        }
+    }
+}

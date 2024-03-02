@@ -1,0 +1,29 @@
+/* Back to Top */
+#back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 95px;
+    right: 40px;
+    display:none;
+
+    @media (min-width: 768px) {
+        bottom: 55px;
+        right: 40px;
+    }
+}
+
+.back-to-top {
+    background-color: #9aa4af;
+    border-color: #9aa4af;
+    color: #6f7b88;
+    padding: 10px;
+    @include border-radius(50%);
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $brand-primary;
+        border-color: $brand-primary;
+        color: #9aa4af;
+    }
+}

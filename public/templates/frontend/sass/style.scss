@@ -1,0 +1,35 @@
+/*
+style.css
+Kamu bisa mengedit langsung CSS ini
+atau menggunakan SCSS di folder scss
+ */
+
+// Libs
+@import "libs/vars";
+@import "libs/mixins";
+
+// Base
+@import "base/page";
+@import "base/typography";
+
+// Layout
+@import "layout/topbar";
+@import "layout/navbar";
+@import "layout/slider";
+@import "layout/kilas-berita";
+@import "layout/search";
+@import "layout/content";
+@import "layout/footer";
+
+// Components
+@import "components/back-to-top";
+@import "components/popover";
+
+// Pages
+@import "pages/beranda-pusat-organisasi";
+@import "pages/beranda-pusat";
+@import "pages/profil";
+@import "pages/pusat-berita";
+@import "pages/kontak";
+@import "pages/index-berita";
+@import "pages/hut-ri-72";

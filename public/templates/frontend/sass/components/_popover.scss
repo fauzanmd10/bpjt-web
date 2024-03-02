@@ -1,0 +1,10 @@
+/* Popover */
+.popover {
+    width: 200px;
+}
+
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: $brand-primary;
+}

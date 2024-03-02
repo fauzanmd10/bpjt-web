@@ -1,0 +1,117 @@
+/* Footer */
+footer {
+
+    .container-fluid {
+        background-color: #365373;
+        padding-top: 30px
+    }
+
+    @media (min-width: 768px) {
+        .container-fluid {
+            background-image: url("../img/footer-bg.png");
+            background-size: cover;
+        }
+    }
+
+    #footer-link {
+
+        .footer-title {
+            color: #fff;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .footer-title::before {
+            content : "";
+            position: absolute;
+            left    : 0;
+            bottom  : 0;
+            height  : 20px;
+            width   : 20%;  /* or 100px */
+            border-bottom: 1px solid #fff;
+        }
+
+        ul {
+            margin-top: 30px;
+        }
+
+
+        ul li {
+            color: #fff;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        ul li a {
+            color: #fff;
+
+        }
+
+        ul li a:hover,
+        ul li a:focus {
+            color: #fff;
+        }
+
+        ul li span.visitor-count {
+            color: #fff;
+            font-weight: 700;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 15px;
+            padding-right: 5px;
+            letter-spacing: 10px;
+
+            background: #535454; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(#535454, #272728); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(#535454, #272728); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(#535454, #272728); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(#535454, #272728); /* Standard syntax */
+        }
+        
+        ul.social-media li.social-list {
+            list-style-type: none;
+            float: left;
+        }
+
+        ul.social-media li a i {
+            background: #205D7A;
+            color: #fff;
+            width: 35px;
+            height: 35px;
+            border-radius: 20px;
+            font-size: 20px;
+            text-align: center;
+            margin-right: 10px;
+            padding-top: 15%;
+        }
+
+        ul.social-media .fa-twitter {
+            background: #55acee;
+        }
+        ul.social-media .fa-facebook {
+            background: #3b5999;
+        } 
+        ul.social-media .fa-youtube {
+            background: #cd201f;
+        }
+        ul.social-media .fa-instagram {
+            background: #e4405f;
+        }
+    }
+
+    #copyright {
+        .row {
+            background-color: #273f59;
+            color: #fff;
+            padding-top: 30px;
+            padding-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            font-weight: 700;
+        }
+    }
+
+}
