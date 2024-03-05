@@ -2,8 +2,6 @@
 
 class Form_Toll extends CI_Controller
 {
-    public $user_access;
-
     public function __construct()
     {
         parent::__construct();
