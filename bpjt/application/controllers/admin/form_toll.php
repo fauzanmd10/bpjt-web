@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class form_toll extends CI_Controller
+class Form_Toll extends CI_Controller
 {
     public $user_access;
 
