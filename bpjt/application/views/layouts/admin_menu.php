@@ -64,7 +64,7 @@
             </ul>
           </li>
         <?php } ?>
-        <li class="dropdown"><a href="<?php echo site_url('admin/form_toll'); ?>" <?php echo ($this->router->fetch_class() == 'form_toll') ? "style='text-decoration:none;background-color:rgb(255, 255, 255);color:rgb(234, 178, 0);'" : ""; ?>>Form Toll</a>
+        <li><a href="<?php echo site_url('admin/form_toll'); ?>">Form Toll</a>
         </li>
         <!-- <li class="dropdown">
                 <a href="#">BPJT</a>

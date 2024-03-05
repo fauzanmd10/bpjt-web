@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -95,6 +95,7 @@ $route['admin/contents/cms/(:any)/(:any)'] = 'admin/contents/cms/$1/$2';
 $route['admin/contents/(:any)'] = 'admin/contents/form/$1/$2';
 $route['admin/contents/(:any)/(:any)'] = 'admin/contents/form/$1/$2';
 $route['admin/contents/(:any)/(:any)/(:any)'] = 'admin/contents/form/$1/$3';
+$route['admin/form_toll'] = 'admin/form_toll/index';
 $route['admin/cctv'] = 'admin/cctv';
 $route['konten/pdf/(:any)'] = 'contents/pdf/$1';
 $route['konten/pdf/(:any)/(:any)'] = 'contents/pdf/$1/$2';
