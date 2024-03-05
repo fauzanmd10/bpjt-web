@@ -128,7 +128,9 @@ class Cctv extends CI_Controller
 		$data = array(
 			'menu' => $this->load->view('layouts/admin_menu', null, true),
 			'content_head' => $this->load->view('layouts/admin_content_head', array('breadcrumbs' => $breadcrumbs, 'subtitle' => 'CCTV', 'title' => 'Tambah CCTV'), true),
-			'content' => $this->load->view('admin/cctv/add', array('cctv' => $cctv), true),
+			// 'content' => $this->load->view('admin/cctv/add', array('cctv' => $cctv), true),
+			'content' => $this->load->view('admin/form_toll/add', array('cctv' => $cctv), true),
+
 			'jscripts' => $jscripts,
 			'stylesheets' => $stylesheets,
 			'unread_comments' => $this->comment->get_total_unread_comments()

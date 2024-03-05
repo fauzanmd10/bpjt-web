@@ -12,22 +12,22 @@ class Form_Toll extends CI_Controller
             redirect('/admin');
         }
 
-        $this->load->model('access');
-        $this->user_access = $this->access->get_user_access_by_key('artikel_sub_kategori_berita', $this->session->userdata('user_group_id'));
-        $this->user_access = $this->user_access[0];
-        if (($this->router->fetch_method() == 'index' || $this->router->fetch_method() == 'show') && !$this->user_access->single) {
-            $this->session->set_flashdata('access_denied', true);
-            redirect('/admin/dashboard');
-        } elseif ($this->router->fetch_method() == 'add' && !$this->user_access->add) {
-            $this->session->set_flashdata('access_denied', true);
-            redirect('/admin/dashboard');
-        } elseif ($this->router->fetch_method() == 'edit' && !$this->user_access->edit) {
-            $this->session->set_flashdata('access_denied', true);
-            redirect('/admin/dashboard');
-        } elseif ($this->router->fetch_method() == 'destroy' && !$this->user_access->destroy) {
-            echo json_encode(array('status' => 'fail', 'code' => 1));
-            exit;
-        }
+        // $this->load->model('access');
+        // $this->user_access = $this->access->get_user_access_by_key('artikel_sub_kategori_berita', $this->session->userdata('user_group_id'));
+        // $this->user_access = $this->user_access[0];
+        // if (($this->router->fetch_method() == 'index' || $this->router->fetch_method() == 'show') && !$this->user_access->single) {
+        //     $this->session->set_flashdata('access_denied', true);
+        //     redirect('/admin/dashboard');
+        // } elseif ($this->router->fetch_method() == 'add' && !$this->user_access->add) {
+        //     $this->session->set_flashdata('access_denied', true);
+        //     redirect('/admin/dashboard');
+        // } elseif ($this->router->fetch_method() == 'edit' && !$this->user_access->edit) {
+        //     $this->session->set_flashdata('access_denied', true);
+        //     redirect('/admin/dashboard');
+        // } elseif ($this->router->fetch_method() == 'destroy' && !$this->user_access->destroy) {
+        //     echo json_encode(array('status' => 'fail', 'code' => 1));
+        //     exit;
+        // }
     }
 
     public function index()
