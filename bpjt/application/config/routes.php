@@ -96,6 +96,7 @@ $route['admin/contents/(:any)'] = 'admin/contents/form/$1/$2';
 $route['admin/contents/(:any)/(:any)'] = 'admin/contents/form/$1/$2';
 $route['admin/contents/(:any)/(:any)/(:any)'] = 'admin/contents/form/$1/$3';
 $route['admin/form_toll'] = 'admin/form_toll/index';
+$route['admin/form_toll/add'] = 'admin/form_toll/add';
 $route['admin/cctv'] = 'admin/cctv';
 $route['konten/pdf/(:any)'] = 'contents/pdf/$1';
 $route['konten/pdf/(:any)/(:any)'] = 'contents/pdf/$1/$2';
