@@ -54,7 +54,7 @@ class Cctv extends CI_Controller
 			'menu' => $this->load->view('layouts/admin_menu', null, true),
 			'content_head' => $this->load->view('layouts/admin_content_head', array('breadcrumbs' => $breadcrumbs, 'subtitle' => 'CCTV', 'title' => 'CCTV'), true),
 			// 'content' => $this->load->view('admin/cctv/index', array('flash'=>$this->session->flashdata('menus_success')), true),
-			'content' => $this->load->view('admin/form_toll/index', array('flash' => $this->session->flashdata('menus_success')), true),
+			'content' => $this->load->view('admin/cctv/index', array('flash' => $this->session->flashdata('menus_success')), true),
 			'jscripts' => $jscripts,
 			'unread_comments' => $this->comment->get_total_unread_comments()
 		);
