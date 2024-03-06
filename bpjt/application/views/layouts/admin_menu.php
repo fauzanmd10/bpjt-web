@@ -64,7 +64,7 @@
             </ul>
           </li>
         <?php } ?>
-        <li><a href="<?php echo site_url('invest_reg_gilmeng'); ?>">Lelang Toll</a>
+        <li><a href="<?php echo site_url('admin/Register_auction/add_invest2'); ?>">Lelang Toll</a>
         </li>
         <!-- <li class="dropdown">
                 <a href="#">BPJT</a>
