@@ -500,106 +500,23 @@ class Lelangdoc extends CI_Controller
 		$this->load->view('layouts/admin_content.php', $data);
 	}
 
-	// public function create_form() {
-
-	// 	if ($this->input->post()) {
-	// 		$this->load->model(array('document', 'user_log'));
-	// 		$this->load->library('form_validation');
-
-	// 		$this->form_validation->set_rules('file_id_file_en', 'File', 'trim|callback_check_required');
-	// 		$this->form_validation->set_rules('file', 'File', 'trim|callback_check_filetype');
-	// 		$this->form_validation->set_rules('file', 'File', 'trim|callback_check_filesize');
-	// 		$this->form_validation->set_message('check_required', 'File dalam Bahasa Indonesia harus terisi');
-	// 		$this->form_validation->set_message('check_filetype', 'Silakan ganti file karena tipe file tidak dikenal.');
-	// 		$this->form_validation->set_message('check_filesize', 'Ukuran dokumen yang anda upload terlalu besar.');
-
-	// 		if ($this->form_validation->run()) {
-	// 			$type_id = ($this->input->post('type_id',true) == "0") ? null : $this->types[$this->input->post('type_id',true)];
-
-	// 			$sub_content_type = 'form-pqnull';
-	// 			$user_group_id= $this->session->userdata('user_group_id');
-	// 			if($user_group_id == '33'){
-	// 				$sub_content_type = 'form-pqsetakarat';
-	// 			} elseif($user_group_id == '43'){
-	// 				$sub_content_type = 'form-pqgaetacim';
-	// 			} elseif($user_group_id == '45'){
-	// 				$sub_content_type = 'form-pqgilmeng';
-	// 			}
-
-	// 			$data_document = array(
-	// 				'title'=>$this->input->post('title_id',true),
-	// 				'caption'=>$this->input->post('content_id',true),
-	// 				'url'=>'',
-	// 				'semester'=>0,
-	// 				'year'=>0,
-	// 				'filename'=>'',
-	// 				'slug'=>$this->create_slug($this->input->post('title_id',true)),
-	// 				'content_type'=>'regulation',
-	// 				'sub_content_type'=>$sub_content_type,
-	// 				'lang'=>'id',
-	// 				'status'=>'published',
-	// 				'created_at'=>date('Y-m-d H:i:s'),
-	// 				'updated_at'=>date('Y-m-d H:i:s')
-	// 			);
-
-	// 			if ($this->document->insert($data_document)) {
-	// 				$mime = mime_content_type($_FILES['file_id']['tmp_name']);
-	// 				if ($mime == 'application/pdf' ){
-
-	// 					$doc_id = $this->db->insert_id();
-
-	// 					$filename = $_FILES['file_id']['name'];
-	// 					$extensions = explode('.', $filename);
-	// 					$extension = $extensions[count($extensions)-1];
-	// 					$filetype = $_FILES['file_id']['type'];
-	// 					// $size = $_FILES['file']['size'];
-	// 					$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/files/lelangform/' . $doc_id;
-
-	// 					if (!is_dir($upload_dir)) {
-	// 						mkdir($upload_dir, 0755, true);
-	// 					}
-
-	// 					$new_filename = md5($filename . date('YmdHis')) . '.' . $extension;
-	// 					$new_filepath = base_url() . 'uploads/files/lelangform/' . $doc_id . '/' . $new_filename;
-
-	// 					move_uploaded_file($_FILES['file_id']['tmp_name'], $upload_dir . '/' . $new_filename);
-	// 					$data_document = array(
-	// 						'filename'=>$new_filename,
-	// 						'url'=>$new_filepath
-	// 					);
-	// 					$this->document->update($doc_id, $data_document);
-	// 				}
-
-	// 				$this->user_log->add_log($this->session->userdata('user_id'), 'documents', $doc_id, 'Pengguna menambah dokumen');
-
-	// 				$this->session->set_flashdata('documents_success', true);
-	// 				redirect('auctions');
-	// 			} else {
-	// 				$this->add($this->input->post());
-	// 			}
-	// 		} else {
-	// 			$this->add($this->input->post());
-	// 		}
-	// 	}
-	// }
-
 	public function create_form()
 	{
+
 		if ($this->input->post()) {
 			$this->load->model(array('document', 'user_log'));
 			$this->load->library('form_validation');
 
-			// Set validation rules for the file upload field
-			$this->form_validation->set_rules('file', 'File', 'callback_check_required|callback_check_filetype|callback_check_filesize');
+			$this->form_validation->set_rules('file_id_file_en', 'File', 'trim|callback_check_required');
+			$this->form_validation->set_rules('file', 'File', 'trim|callback_check_filetype');
+			$this->form_validation->set_rules('file', 'File', 'trim|callback_check_filesize');
 			$this->form_validation->set_message('check_required', 'File dalam Bahasa Indonesia harus terisi');
 			$this->form_validation->set_message('check_filetype', 'Silakan ganti file karena tipe file tidak dikenal.');
 			$this->form_validation->set_message('check_filesize', 'Ukuran dokumen yang anda upload terlalu besar.');
 
 			if ($this->form_validation->run()) {
-				// File validation passed, proceed with other data processing
 				$type_id = ($this->input->post('type_id', true) == "0") ? null : $this->types[$this->input->post('type_id', true)];
 
-				// Determine sub content type based on user group
 				$sub_content_type = 'form-pqnull';
 				$user_group_id = $this->session->userdata('user_group_id');
 				if ($user_group_id == '33') {
@@ -610,7 +527,6 @@ class Lelangdoc extends CI_Controller
 					$sub_content_type = 'form-pqgilmeng';
 				}
 
-				// Prepare document data
 				$data_document = array(
 					'title' => $this->input->post('title_id', true),
 					'caption' => $this->input->post('content_id', true),
@@ -628,46 +544,132 @@ class Lelangdoc extends CI_Controller
 				);
 
 				if ($this->document->insert($data_document)) {
-					// Document inserted, proceed with file upload
-					$doc_id = $this->db->insert_id();
-					$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/files/lelangform/' . $doc_id;
+					$mime = mime_content_type($_FILES['file_id']['tmp_name']);
+					if ($mime == 'application/pdf') {
 
-					if (!is_dir($upload_dir)) {
-						mkdir($upload_dir, 0755, true);
+						$doc_id = $this->db->insert_id();
+
+						$filename = $_FILES['file_id']['name'];
+						$extensions = explode('.', $filename);
+						$extension = $extensions[count($extensions) - 1];
+						$filetype = $_FILES['file_id']['type'];
+						// $size = $_FILES['file']['size'];
+						$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/files/lelangform/' . $doc_id;
+
+						if (!is_dir($upload_dir)) {
+							mkdir($upload_dir, 0755, true);
+						}
+
+						$new_filename = md5($filename . date('YmdHis')) . '.' . $extension;
+						$new_filepath = base_url() . 'uploads/files/lelangform/' . $doc_id . '/' . $new_filename;
+
+						move_uploaded_file($_FILES['file_id']['tmp_name'], $upload_dir . '/' . $new_filename);
+						$data_document = array(
+							'filename' => $new_filename,
+							'url' => $new_filepath
+						);
+						$this->document->update($doc_id, $data_document);
 					}
 
-					// Generate new filename to avoid conflicts
-					$filename = $_FILES['file']['name'];
-					$extension = pathinfo($filename, PATHINFO_EXTENSION);
-					$new_filename = md5($filename . date('YmdHis')) . '.' . $extension;
-					$new_filepath = base_url() . 'uploads/files/lelangform/' . $doc_id . '/' . $new_filename;
-
-					// Move uploaded file to the upload directory
-					move_uploaded_file($_FILES['file']['tmp_name'], $upload_dir . '/' . $new_filename);
-
-					// Update document record with file details
-					$data_document = array(
-						'filename' => $new_filename,
-						'url' => $new_filepath
-					);
-					$this->document->update($doc_id, $data_document);
-
-					// Log user action
 					$this->user_log->add_log($this->session->userdata('user_id'), 'documents', $doc_id, 'Pengguna menambah dokumen');
 
-					// Set flash message and redirect
 					$this->session->set_flashdata('documents_success', true);
 					redirect('auctions');
 				} else {
-					// Document insertion failed, handle accordingly
 					$this->add($this->input->post());
 				}
 			} else {
-				// Form validation failed, re-display the form with validation errors
 				$this->add($this->input->post());
 			}
 		}
 	}
+
+	// public function create_form()
+	// {
+	// 	if ($this->input->post()) {
+	// 		$this->load->model(array('document', 'user_log'));
+	// 		$this->load->library('form_validation');
+
+	// 		// Set validation rules for the file upload field
+	// 		$this->form_validation->set_rules('file', 'File', 'callback_check_required|callback_check_filetype|callback_check_filesize');
+	// 		$this->form_validation->set_message('check_required', 'File dalam Bahasa Indonesia harus terisi');
+	// 		$this->form_validation->set_message('check_filetype', 'Silakan ganti file karena tipe file tidak dikenal.');
+	// 		$this->form_validation->set_message('check_filesize', 'Ukuran dokumen yang anda upload terlalu besar.');
+
+	// 		if ($this->form_validation->run()) {
+	// 			// File validation passed, proceed with other data processing
+	// 			$type_id = ($this->input->post('type_id', true) == "0") ? null : $this->types[$this->input->post('type_id', true)];
+
+	// 			// Determine sub content type based on user group
+	// 			$sub_content_type = 'form-pqnull';
+	// 			$user_group_id = $this->session->userdata('user_group_id');
+	// 			if ($user_group_id == '33') {
+	// 				$sub_content_type = 'form-pqsetakarat';
+	// 			} elseif ($user_group_id == '43') {
+	// 				$sub_content_type = 'form-pqgaetacim';
+	// 			} elseif ($user_group_id == '45') {
+	// 				$sub_content_type = 'form-pqgilmeng';
+	// 			}
+
+	// 			// Prepare document data
+	// 			$data_document = array(
+	// 				'title' => $this->input->post('title_id', true),
+	// 				'caption' => $this->input->post('content_id', true),
+	// 				'url' => '',
+	// 				'semester' => 0,
+	// 				'year' => 0,
+	// 				'filename' => '',
+	// 				'slug' => $this->create_slug($this->input->post('title_id', true)),
+	// 				'content_type' => 'regulation',
+	// 				'sub_content_type' => $sub_content_type,
+	// 				'lang' => 'id',
+	// 				'status' => 'published',
+	// 				'created_at' => date('Y-m-d H:i:s'),
+	// 				'updated_at' => date('Y-m-d H:i:s')
+	// 			);
+
+	// 			if ($this->document->insert($data_document)) {
+	// 				// Document inserted, proceed with file upload
+	// 				$doc_id = $this->db->insert_id();
+	// 				$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/files/lelangform/' . $doc_id;
+
+	// 				if (!is_dir($upload_dir)) {
+	// 					mkdir($upload_dir, 0755, true);
+	// 				}
+
+	// 				// Generate new filename to avoid conflicts
+	// 				$filename = $_FILES['file']['name'];
+	// 				$extension = pathinfo($filename, PATHINFO_EXTENSION);
+	// 				$new_filename = md5($filename . date('YmdHis')) . '.' . $extension;
+	// 				$new_filepath = base_url() . 'uploads/files/lelangform/' . $doc_id . '/' . $new_filename;
+
+	// 				$this->load->library('upload', $config);
+	// 				// Move uploaded file to the upload directory
+	// 				move_uploaded_file($_FILES['file']['tmp_name'], $upload_dir . '/' . $new_filename);
+
+	// 				// Update document record with file details
+	// 				$data_document = array(
+	// 					'filename' => $new_filename,
+	// 					'url' => $new_filepath
+	// 				);
+	// 				$this->document->update($doc_id, $data_document);
+
+	// 				// Log user action
+	// 				$this->user_log->add_log($this->session->userdata('user_id'), 'documents', $doc_id, 'Pengguna menambah dokumen');
+
+	// 				// Set flash message and redirect
+	// 				$this->session->set_flashdata('documents_success', true);
+	// 				redirect('auctions');
+	// 			} else {
+	// 				// Document insertion failed, handle accordingly
+	// 				$this->add($this->input->post());
+	// 			}
+	// 		} else {
+	// 			// Form validation failed, re-display the form with validation errors
+	// 			$this->add($this->input->post());
+	// 		}
+	// 	}
+	// }
 
 	public function edit($id)
 	{
