@@ -213,7 +213,7 @@ class Lelangdoc extends CI_Controller
 	public function update($id)
 	{
 		if ($this->input->post()) {
-			// $this->load->model(array('document_lelang', 'user_log'));
+			$this->load->model(array('document_lelang', 'user_log'));
 
 			// $data_document = array(
 			// 	'title' => $this->input->post('title_id', true),
