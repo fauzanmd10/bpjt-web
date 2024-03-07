@@ -213,42 +213,19 @@ class Lelangdoc extends CI_Controller
 	public function update($id)
 	{
 		if ($this->input->post()) {
-			$this->load->model(array('document_lelang', 'user_log'));
-
-			$data_document = array(
-				'title' => $this->input->post('title_id', true),
-				'caption' => $this->input->post('content_id', true)
-			);
-
-			if ($this->document_lelang->update($id, $data_document)) {
-				$this->user_log->add_log($this->session->userdata('user_id'), 'documents_lelang', $id, 'Pengguna mengubah data lelang');
-				$this->session->set_flashdata('document_success', true);
-			} else {
-				$this->session->set_flashdata('document_failed', true);
-			}
-
-			redirect('admin/lelangdoc');
-		}
-	}
-
-	public function update_form($id)
-	{
-		if ($this->input->post()) {
-			// $this->load->model(array('document', 'user_log'));
+			// $this->load->model(array('document_lelang', 'user_log'));
 
 			// $data_document = array(
 			// 	'title' => $this->input->post('title_id', true),
 			// 	'caption' => $this->input->post('content_id', true)
 			// );
 
-			// if ($this->document->update($id, $data_document)) {
-			// 	$this->user_log->add_log($this->session->userdata('user_id'), 'documents', $id, 'Pengguna mengubah data lelang');
+			// if ($this->document_lelang->update($id, $data_document)) {
+			// 	$this->user_log->add_log($this->session->userdata('user_id'), 'documents_lelang', $id, 'Pengguna mengubah data lelang');
 			// 	$this->session->set_flashdata('document_success', true);
 			// } else {
 			// 	$this->session->set_flashdata('document_failed', true);
 			// }
-
-			// redirect('admin/lelangdoc');
 			$mime = mime_content_type($_FILES['file']['tmp_name']);
 			if ($mime == 'application/pdf') {
 
@@ -279,7 +256,7 @@ class Lelangdoc extends CI_Controller
 					'title' => $this->input->post('title_id', true),
 					'caption' => $this->input->post('content_id', true)
 				);
-				$this->document_lelang->update($id, $data_document);
+				// $this->document_lelang->update($id, $data_document);
 				if ($this->document->update($id, $data_document)) {
 					$this->user_log->add_log($this->session->userdata('user_id'), 'documents', $id, 'Pengguna mengubah data lelang');
 					$this->session->set_flashdata('document_success', true);
@@ -344,6 +321,29 @@ class Lelangdoc extends CI_Controller
 			}
 
 			echo json_encode($retjson);
+
+			redirect('admin/lelangdoc');
+		}
+	}
+
+	public function update_form($id)
+	{
+		if ($this->input->post()) {
+			$this->load->model(array('document', 'user_log'));
+
+			$data_document = array(
+				'title' => $this->input->post('title_id', true),
+				'caption' => $this->input->post('content_id', true)
+			);
+
+			if ($this->document->update($id, $data_document)) {
+				$this->user_log->add_log($this->session->userdata('user_id'), 'documents', $id, 'Pengguna mengubah data lelang');
+				$this->session->set_flashdata('document_success', true);
+			} else {
+				$this->session->set_flashdata('document_failed', true);
+			}
+
+			redirect('admin/lelangdoc');
 		}
 	}
 
