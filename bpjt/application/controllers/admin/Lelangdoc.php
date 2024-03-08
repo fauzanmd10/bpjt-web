@@ -961,7 +961,8 @@ class Lelangdoc extends CI_Controller
 		$data = array(
 			'menu' => $this->load->view('layouts/menu_lelang', null, true),
 			'content_head' => $this->load->view('layouts/admin_content_head', array('breadcrumbs' => $breadcrumbs, 'subtitle' => 'Dokumen', 'title' => 'Edit Dokumen'), true),
-			'content' => $this->load->view('admin/lelangdoc/add_edit', array('document' => $document, 'form_url' => 'admin/lelangdoc/update/' . ($document->id ?? '')), true),
+			// 'content' => $this->load->view('admin/lelangdoc/add_edit', array('document' => $document, 'form_url' => 'admin/lelangdoc/update/' . ($document->id ?? '')), true),
+			'content' => $this->load->view('admin/lelangdoc/add_edit_form', array('document_lelang' => $document, 'form_url' => 'admin/lelangdoc/update/' . ($document->id ?? '')), true),
 			'jscripts' => $jscripts,
 			'stylesheets' => $stylesheets,
 			'unread_comments' => $this->comment->get_total_unread_comments()
