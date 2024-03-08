@@ -214,7 +214,7 @@ class Lelangdoc extends CI_Controller
 	{
 		if ($this->input->post()) {
 			// echo "test";
-			$this->load->model(array('document', 'user_log'));
+			$this->load->model(array('document_lelang', 'user_log'));
 			$this->load->library('form_validation');
 
 			$this->form_validation->set_rules('file_id_file_en', 'File', 'trim|callback_check_required');
@@ -364,8 +364,8 @@ class Lelangdoc extends CI_Controller
 
 
 
-			if ($this->document->update($id, $data_document)) {
-				if ($this->document->insert($data_document)) {
+			if ($this->document_lelang->update($id, $data_document)) {
+				if ($this->document_lelang->insert($data_document)) {
 					$mime = mime_content_type($_FILES['file_id']['tmp_name']);
 					// if ($mime == 'application/pdf') {
 
