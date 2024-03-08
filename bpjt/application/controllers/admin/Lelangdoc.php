@@ -325,17 +325,20 @@ class Lelangdoc extends CI_Controller
 							}
 
 							$filename = $_FILES['file']['name'];
-							$new_filename = md5($filename . date('YmdHis')) . '.pdf';
-							$new_filepath = base_url() . 'uploads/lelangdocs/' . $id . '/' . $new_filename;
+							$extension = pathinfo($filename, PATHINFO_EXTENSION);
+							$new_filename = md5($filename . date('YmdHis') . uniqid()) . '.' . $extension;
+							$new_filepath = $upload_dir . '/' . $new_filename;
 
-							move_uploaded_file($_FILES['file']['tmp_name'], $upload_dir . '/' . $new_filename);
-
-							// Update database with file information
-							$data_document = array(
-								'filename' => $new_filename,
-								'url' => $new_filepath,
-							);
-							$this->document_lelang->update($id, $data_document);
+							if (move_uploaded_file($_FILES['file']['tmp_name'], $new_filepath)) {
+								// Update database with file information
+								$data_document = array(
+									'filename' => $new_filename,
+									'url' => $new_filepath,
+								);
+								$this->document_lelang->update($id, $data_document);
+							} else {
+								echo "error";
+							}
 						}
 					}
 					$this->user_log->add_log($this->session->userdata('user_id'), 'documents_lelang', $id, 'Pengguna mengubah data lelang');
