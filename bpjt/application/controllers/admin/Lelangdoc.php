@@ -218,7 +218,9 @@ class Lelangdoc extends CI_Controller
 
 			$data_document = array(
 				'title' => $this->input->post('title_id', true),
-				'caption' => $this->input->post('content_id', true)
+				'caption' => $this->input->post('content_id', true),
+				'url' => '',
+				'filename' => '',
 			);
 			if ($this->document->insert($data_document)) {
 				$mime = mime_content_type($_FILES['file_id']['tmp_name']);
@@ -251,7 +253,7 @@ class Lelangdoc extends CI_Controller
 				$this->user_log->add_log($this->session->userdata('user_id'), 'documents', $doc_id, 'Pengguna menambah dokumen');
 
 				$this->session->set_flashdata('documents_success', true);
-				redirect('auctions');
+				redirect('admin/lelangdoc');
 			} else {
 				$this->add($this->input->post());
 			}
