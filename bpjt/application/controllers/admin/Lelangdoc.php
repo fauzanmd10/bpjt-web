@@ -283,7 +283,7 @@ class Lelangdoc extends CI_Controller
 							$extensions = explode('.', $filename);
 							$extension = $extensions[count($extensions) - 1];
 							$filetype = $_FILES['file']['type'];
-							$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/lelangdocs/' . $id;
+							$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/files/lelangform/' . $id;
 							// $upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/lelangdocs/';
 
 
@@ -292,14 +292,14 @@ class Lelangdoc extends CI_Controller
 							}
 
 							$new_filename = md5($filename . date('YmdHis')) . '.' . $extension;
-							$new_filepath = base_url() . 'uploads/lelangdocs/' . $id . '/' . $new_filename;
+							$new_filepath = base_url() . 'uploads/files/lelangform/' . $id . '/' . $new_filename;
 							// $new_filepath = base_url() . 'uploads/lelangdocs/' . $new_filename;
 
 
 							move_uploaded_file($_FILES['file']['tmp_name'], $upload_dir . '/' . $new_filename);
-							if (move_uploaded_file($_FILES['file']['tmp_name'], $upload_dir . '/' . $new_filename)) {
-								dd("test");
-							}
+							// if (move_uploaded_file($_FILES['file']['tmp_name'], $upload_dir . '/' . $new_filename)) {
+							// 	dd("test");
+							// }
 
 							$data_document = array(
 								'filename' => $new_filename,
