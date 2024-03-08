@@ -241,16 +241,7 @@ class Lelangdoc extends CI_Controller
 					'title' => $this->input->post('title_id', true),
 					'caption' => $this->input->post('content_id', true),
 					'url' => '',
-					'semester' => 0,
-					'year' => 0,
 					'filename' => '',
-					'slug' => $this->create_slug($this->input->post('title_id', true)),
-					'content_type' => 'regulation',
-					'sub_content_type' => $sub_content_type,
-					'lang' => 'id',
-					'status' => 'published',
-					'created_at' => date('Y-m-d H:i:s'),
-					'updated_at' => date('Y-m-d H:i:s')
 				);
 
 
@@ -319,6 +310,7 @@ class Lelangdoc extends CI_Controller
 						// Handle PDF upload
 						$mime = mime_content_type($_FILES['file']['tmp_name']);
 						if ($mime == 'application/pdf') {
+							$this->load->model(array('document_lelang', 'user_log'));
 							$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/lelangdocs/' . $id;
 							if (!is_dir($upload_dir)) {
 								mkdir($upload_dir, 0755, true);
