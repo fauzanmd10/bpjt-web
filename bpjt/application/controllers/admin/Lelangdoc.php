@@ -286,13 +286,14 @@ class Lelangdoc extends CI_Controller
 						if ($mime == 'application/pdf') {
 
 							$this->load->model(array('document_lelang', 'user_log'));
+							$doc_id = $this->db->insert_id();
 
 							$filename = $_FILES['file']['name'];
 							$extensions = explode('.', $filename);
 							$extension = $extensions[count($extensions) - 1];
 							$filetype = $_FILES['file']['type'];
-							// $upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/lelangdocs/' . $id;
-							$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/lelangdocs/';
+							$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/lelangdocs/' . $doc_id;
+							// $upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/lelangdocs/';
 
 
 							if (!is_dir($upload_dir)) {
@@ -300,8 +301,8 @@ class Lelangdoc extends CI_Controller
 							}
 
 							$new_filename = md5($filename . date('YmdHis')) . '.' . $extension;
-							// $new_filepath = base_url() . 'uploads/lelangdocs/' . $id . '/' . $new_filename;
-							$new_filepath = base_url() . 'uploads/lelangdocs/' . $new_filename;
+							$new_filepath = base_url() . 'uploads/lelangdocs/' . $doc_id . '/' . $new_filename;
+							// $new_filepath = base_url() . 'uploads/lelangdocs/' . $new_filename;
 
 
 							move_uploaded_file($_FILES['file']['tmp_name'], $upload_dir . '/' . $new_filename);
