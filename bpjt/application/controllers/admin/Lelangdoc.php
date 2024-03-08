@@ -323,6 +323,7 @@ class Lelangdoc extends CI_Controller
 
 							echo "test";
 
+							dd($new_filename);
 							if (move_uploaded_file($_FILES['file']['tmp_name'], $new_filepath)) {
 								// Update database with file information
 								echo "check";
