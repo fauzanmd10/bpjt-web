@@ -321,8 +321,11 @@ class Lelangdoc extends CI_Controller
 							$new_filename = md5($filename . date('YmdHis') . uniqid()) . '.' . $extension;
 							$new_filepath = $upload_dir . '/' . $new_filename;
 
+							echo "test";
+
 							if (move_uploaded_file($_FILES['file']['tmp_name'], $new_filepath)) {
 								// Update database with file information
+								echo "check";
 								$data_document = array(
 									'filename' => $new_filename,
 									'url' => $new_filepath,
