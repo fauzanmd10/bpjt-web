@@ -586,41 +586,40 @@ class Lelangdoc extends CI_Controller
 			);
 
 			// Check if the document data is successfully updated
-			if ($this->document_lelang->update($id, $data_document)) {
-				// Handle file upload if a file is selected
-				if ($_FILES['file']['error'] === UPLOAD_ERR_OK) {
-					$mime = mime_content_type($_FILES['file']['tmp_name']);
-					if ($mime == 'application/pdf') {
-						$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/files/lelangform/' . $id;
-						if (!is_dir($upload_dir)) {
-							mkdir($upload_dir, 0755, true);
-						}
+			if ($this->document_lelang->insert($data_document)) {
+				$mime = mime_content_type($_FILES['file_id']['tmp_name']);
+				if ($mime == 'application/pdf') {
 
-						$filename = $_FILES['file']['name'];
-						$extension = pathinfo($filename, PATHINFO_EXTENSION);
-						$new_filename = md5($filename . date('YmdHis')) . '.' . $extension;
-						$new_filepath = base_url() . 'uploads/files/lelangform/' . $id . '/' . $new_filename;
+					$doc_id = $this->db->insert_id();
 
-						if (move_uploaded_file($_FILES['file']['tmp_name'], $upload_dir . '/' . $new_filename)) {
-							// Update database with file information
-							$data_document['filename'] = $new_filename;
-							$data_document['url'] = $new_filepath;
+					$filename = $_FILES['file_id']['name'];
+					$extensions = explode('.', $filename);
+					$extension = $extensions[count($extensions) - 1];
+					$filetype = $_FILES['file_id']['type'];
+					// $size = $_FILES['file']['size'];
+					$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/files/lelangform/' . $doc_id;
 
-							$this->document_lelang->update($id, $data_document);
-						} else {
-							// Handle file upload failure
-						}
-					} else {
-						// Handle invalid file type
+					if (!is_dir($upload_dir)) {
+						mkdir($upload_dir, 0755, true);
 					}
+
+					$new_filename = md5($filename . date('YmdHis')) . '.' . $extension;
+					$new_filepath = base_url() . 'uploads/files/lelangform/' . $doc_id . '/' . $new_filename;
+
+					move_uploaded_file($_FILES['file_id']['tmp_name'], $upload_dir . '/' . $new_filename);
+					$data_document = array(
+						'filename' => $new_filename,
+						'url' => $new_filepath
+					);
+					$this->document_lelang->update($doc_id, $data_document);
 				}
 
-				// Log the update and set flash message
-				$this->user_log->add_log($this->session->userdata('user_id'), 'documents_lelang', $id, 'Pengguna mengubah data lelang');
-				$this->session->set_flashdata('document_success', true);
+				$this->user_log->add_log($this->session->userdata('user_id'), 'document_lelang', $doc_id, 'Pengguna menambah dokumen');
+
+				$this->session->set_flashdata('documents_success', true);
+				redirect('auctions');
 			} else {
-				// Handle document update failure
-				$this->session->set_flashdata('document_failed', true);
+				$this->add($this->input->post());
 			}
 
 			// Redirect to the appropriate page
