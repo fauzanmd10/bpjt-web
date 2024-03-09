@@ -515,32 +515,50 @@ class Lelangdoc extends CI_Controller
 
 	public function update($id)
 	{
+		// if ($this->input->post()) {
+		// 	$this->load->model(array('document_lelang', 'user_log'));
+
+		// 	// Retrieve existing document data
+		// 	$existing_document = $this->document_lelang->get_by_id($id);
+
+		// 	// Prepare document data for update
+		// 	$data_document = array(
+		// 		'title' => $this->input->post('title_id', true),
+		// 		'caption' => $this->input->post('content_id', true)
+		// 	);
+
+		// 	// Check if a new file is uploaded
+		// 	// if (isset($_FILES['file']['name']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+		// 	// 	// Handle file upload
+		// 	// 	$upload_result = $this->handle_file_upload($id);
+		// 	// 	if ($upload_result['success']) {
+		// 	// 		// Update database with new file information
+		// 	// 		$data_document['filename'] = $upload_result['filename'];
+		// 	// 		$data_document['url'] = $upload_result['url'];
+		// 	// 	} else {
+		// 	// 		// File upload failed, handle accordingly
+		// 	// 	}
+		// 	// }
+
+		// 	// Update document data in the database
+		// 	if ($this->document_lelang->update($id, $data_document)) {
+		// 		$this->user_log->add_log($this->session->userdata('user_id'), 'documents_lelang', $id, 'Pengguna mengubah data lelang');
+		// 		$this->session->set_flashdata('document_success', true);
+		// 	} else {
+		// 		$this->session->set_flashdata('document_failed', true);
+		// 	}
+
+		// 	redirect('admin/lelangdoc');
+		// }
+
 		if ($this->input->post()) {
 			$this->load->model(array('document_lelang', 'user_log'));
 
-			// Retrieve existing document data
-			$existing_document = $this->document_lelang->get_by_id($id);
-
-			// Prepare document data for update
 			$data_document = array(
 				'title' => $this->input->post('title_id', true),
 				'caption' => $this->input->post('content_id', true)
 			);
 
-			// Check if a new file is uploaded
-			// if (isset($_FILES['file']['name']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
-			// 	// Handle file upload
-			// 	$upload_result = $this->handle_file_upload($id);
-			// 	if ($upload_result['success']) {
-			// 		// Update database with new file information
-			// 		$data_document['filename'] = $upload_result['filename'];
-			// 		$data_document['url'] = $upload_result['url'];
-			// 	} else {
-			// 		// File upload failed, handle accordingly
-			// 	}
-			// }
-
-			// Update document data in the database
 			if ($this->document_lelang->update($id, $data_document)) {
 				$this->user_log->add_log($this->session->userdata('user_id'), 'documents_lelang', $id, 'Pengguna mengubah data lelang');
 				$this->session->set_flashdata('document_success', true);
