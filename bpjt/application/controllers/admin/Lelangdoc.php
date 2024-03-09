@@ -688,8 +688,6 @@ class Lelangdoc extends CI_Controller
 				$data_document = array(
 					'title' => clean_str($this->input->post('title_id', true)),
 					'caption' => clean_str($this->input->post('content_id', true)),
-					'url' => '',
-					'filename' => '',
 
 				);
 
