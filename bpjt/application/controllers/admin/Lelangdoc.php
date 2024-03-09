@@ -559,6 +559,18 @@ class Lelangdoc extends CI_Controller
 				'caption' => $this->input->post('content_id', true)
 			);
 
+			if (isset($_FILES['file']['name']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+				// Handle file upload
+				$upload_result = $this->handle_file_upload($id);
+				if ($upload_result['success']) {
+					// Update database with new file information
+					$data_document['filename'] = $upload_result['filename'];
+					$data_document['url'] = $upload_result['url'];
+				} else {
+					// File upload failed, handle accordingly
+				}
+			}
+
 			if ($this->document_lelang->update($id, $data_document)) {
 				$this->user_log->add_log($this->session->userdata('user_id'), 'documents_lelang', $id, 'Pengguna mengubah data lelang');
 				$this->session->set_flashdata('document_success', true);
