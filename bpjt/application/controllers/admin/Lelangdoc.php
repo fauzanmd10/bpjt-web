@@ -490,6 +490,28 @@ class Lelangdoc extends CI_Controller
 	// 		// echo json_encode($retjson);
 	// 	}
 	// }
+	private function handle_file_upload($id)
+	{
+		$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/lelangdocs/' . $id;
+		if (!is_dir($upload_dir)) {
+			mkdir($upload_dir, 0755, true);
+		}
+
+		$filename = $_FILES['file']['name'];
+		$extension = pathinfo($filename, PATHINFO_EXTENSION);
+		$new_filename = md5($filename . date('YmdHis') . uniqid()) . '.' . $extension;
+		$new_filepath = $upload_dir . '/' . $new_filename;
+
+		if (move_uploaded_file($_FILES['file']['tmp_name'], $new_filepath)) {
+			return array(
+				'success' => true,
+				'filename' => $new_filename,
+				'url' => base_url() . 'uploads/lelangdocs/' . $id . '/' . $new_filename
+			);
+		} else {
+			return array('success' => false);
+		}
+	}
 
 	public function update($id)
 	{
@@ -531,28 +553,7 @@ class Lelangdoc extends CI_Controller
 	}
 
 	// Helper function to handle file upload
-	private function handle_file_upload($id)
-	{
-		$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/lelangdocs/' . $id;
-		if (!is_dir($upload_dir)) {
-			mkdir($upload_dir, 0755, true);
-		}
 
-		$filename = $_FILES['file']['name'];
-		$extension = pathinfo($filename, PATHINFO_EXTENSION);
-		$new_filename = md5($filename . date('YmdHis') . uniqid()) . '.' . $extension;
-		$new_filepath = $upload_dir . '/' . $new_filename;
-
-		if (move_uploaded_file($_FILES['file']['tmp_name'], $new_filepath)) {
-			return array(
-				'success' => true,
-				'filename' => $new_filename,
-				'url' => base_url() . 'uploads/lelangdocs/' . $id . '/' . $new_filename
-			);
-		} else {
-			return array('success' => false);
-		}
-	}
 
 	public function update_file($id)
 	{
