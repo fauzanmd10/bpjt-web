@@ -528,17 +528,17 @@ class Lelangdoc extends CI_Controller
 			);
 
 			// Check if a new file is uploaded
-			if (isset($_FILES['file']['name']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
-				// Handle file upload
-				$upload_result = $this->handle_file_upload($id);
-				if ($upload_result['success']) {
-					// Update database with new file information
-					$data_document['filename'] = $upload_result['filename'];
-					$data_document['url'] = $upload_result['url'];
-				} else {
-					// File upload failed, handle accordingly
-				}
-			}
+			// if (isset($_FILES['file']['name']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+			// 	// Handle file upload
+			// 	$upload_result = $this->handle_file_upload($id);
+			// 	if ($upload_result['success']) {
+			// 		// Update database with new file information
+			// 		$data_document['filename'] = $upload_result['filename'];
+			// 		$data_document['url'] = $upload_result['url'];
+			// 	} else {
+			// 		// File upload failed, handle accordingly
+			// 	}
+			// }
 
 			// Update document data in the database
 			if ($this->document_lelang->update($id, $data_document)) {
