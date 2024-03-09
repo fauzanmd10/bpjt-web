@@ -559,26 +559,53 @@ class Lelangdoc extends CI_Controller
 				'caption' => $this->input->post('content_id', true)
 			);
 
-			if (isset($_FILES['file']['name']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
-				// Handle file upload
-				$upload_result = $this->handle_file_upload($id);
-				if ($upload_result['success']) {
-					// Update database with new file information
-					$data_document['filename'] = $upload_result['filename'];
-					$data_document['url'] = $upload_result['url'];
+			if ($this->document_lelang->insert($data_document)) {
+				$mime = mime_content_type($_FILES['file']['tmp_name']);
+				if ($mime == 'application/pdf') {
+
+					$this->load->model(array('document_lelang', 'user_log'));
+
+					$filename = $_FILES['file']['name'];
+					$extensions = explode('.', $filename);
+					$extension = $extensions[count($extensions) - 1];
+					$filetype = $_FILES['file']['type'];
+					$upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/lelangdocs/' . $id;
+
+					if (!is_dir($upload_dir)) {
+						mkdir($upload_dir, 0755, true);
+					}
+
+					$new_filename = md5($filename . date('YmdHis')) . '.' . $extension;
+					$new_filepath = base_url() . 'uploads/lelangdocs/' . $id . '/' . $new_filename;
+
+					move_uploaded_file($_FILES['file']['tmp_name'], $upload_dir . '/' . $new_filename);
+					$data_document = array(
+						'filename' => $new_filename,
+						'url' => $new_filepath
+					);
+					$this->document_lelang->update($id, $data_document);
+
+					$this->user_log->add_log($this->session->userdata('user_id'), 'documents_lelang', $id, 'Pengguna mengubah data file lelang');
+
+					$retjson = array(
+						'status' => 'success',
+						'new_filepath' => $new_filepath
+					);
 				} else {
-					// File upload failed, handle accordingly
+					$retjson = array(
+						'status' => 'fail'
+					);
 				}
-			}
 
-			if ($this->document_lelang->update($id, $data_document)) {
-				$this->user_log->add_log($this->session->userdata('user_id'), 'documents_lelang', $id, 'Pengguna mengubah data lelang');
-				$this->session->set_flashdata('document_success', true);
-			} else {
-				$this->session->set_flashdata('document_failed', true);
-			}
+				if ($this->document_lelang->update($id, $data_document)) {
+					$this->user_log->add_log($this->session->userdata('user_id'), 'documents_lelang', $id, 'Pengguna mengubah data lelang');
+					$this->session->set_flashdata('document_success', true);
+				} else {
+					$this->session->set_flashdata('document_failed', true);
+				}
 
-			redirect('admin/lelangdoc');
+				redirect('admin/lelangdoc');
+			}
 		}
 	}
 
