@@ -9,7 +9,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html
 	//config.filebrowserBrowseUrl = '../assets/js/vendor/filemanager/index.html';
 	
-	config.filebrowserBrowseUrl = 'https://bpjt.pu.go.id/assets/js/vendor/ckeditor/filemanager/dialog.php?type=2&editor=ckeditor&fldr=';
+	config.filebrowserBrowseUrl = 'https://bpjt.pu.go.id/assets/js/vendor/ckeditor/filemanager/dialog.php?type=1&editor=ckeditor&fldr=';
 	config.filebrowserImageBrowseUrl = 'https://bpjt.pu.go.id/assets/js/vendor/ckeditor/filemanager/dialog.php?type=1&editor=ckeditor&fldr=';
 	config.filebrowserUploadUrl = 'https://bpjt.pu.go.id/assets/js/vendor/ckeditor/filemanager/dialog.php?type=2&editor=ckeditor&fldr='; 
 	config.filebrowserImageBrowseLinkUrl = 'https://bpjt.pu.go.id/assets/js/vendor/ckeditor/filemanager/dialog.php?type=2&editor=ckeditor&fldr=';
