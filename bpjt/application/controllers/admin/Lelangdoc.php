@@ -896,7 +896,9 @@ class Lelangdoc extends CI_Controller
 			$this->form_validation->set_message('check_required', 'File dalam Bahasa Indonesia harus terisi');
 			$this->form_validation->set_message('check_filetype', 'Silakan ganti file karena tipe file tidak dikenal.');
 			$this->form_validation->set_message('check_filesize', 'Ukuran dokumen yang anda upload terlalu besar.');
+			date_default_timezone_set('Asia/Jakarta'); // Set the default timezone to GMT+7
 
+			$current_time = date('Y-m-d H:i:s');
 			if ($this->form_validation->run()) {
 				$type_id = ($this->input->post('type_id', true) == "0") ? null : $this->types[$this->input->post('type_id', true)];
 				$data_document = array(
@@ -912,8 +914,8 @@ class Lelangdoc extends CI_Controller
 					'lang' => 'id',
 					// 'status'=>$this->input->post('status_id',true),
 					'status' => 'published',
-					'created_at' => date('Y-m-d H:i:s'),
-					'updated_at' => date('Y-m-d H:i:s'),
+					'created_at' => $current_time,
+					'updated_at' => $current_time,
 					'lelang_user_id' => $this->session->userdata('user_id')
 				);
 
@@ -1072,6 +1074,9 @@ class Lelangdoc extends CI_Controller
 				} elseif ($user_group_id == '45') {
 					$sub_content_type = 'form-pqgilmeng';
 				}
+				date_default_timezone_set('Asia/Jakarta'); // Set the default timezone to GMT+7
+
+				$current_time = date('Y-m-d H:i:s');
 
 				$data_document = array(
 					'title' => $this->input->post('title_id', true),
@@ -1085,8 +1090,8 @@ class Lelangdoc extends CI_Controller
 					'sub_content_type' => $sub_content_type,
 					'lang' => 'id',
 					'status' => 'published',
-					'created_at' => date('Y-m-d H:i:s'),
-					'updated_at' => date('Y-m-d H:i:s')
+					'created_at' => $current_time,
+					'updated_at' => $current_time
 				);
 
 				if ($this->document->insert($data_document)) {
